@@ -8,7 +8,18 @@ export default {
       lg: '1020px',
       xl: '1440px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        cusOrangeDark: '#d87d4a',
+        cusOrangeLight: '#fbaf85',
+        cusBlack: '#101010',
+        cusGrey: '#f1f1f1',
+        cusWhite: '#fafafa',
+      },
+      fontFamily: {
+        sans: ['Manrope', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
