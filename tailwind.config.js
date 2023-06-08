@@ -19,6 +19,10 @@ export default {
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
       },
+      spacing: {
+        128: '32rem',
+        999: '99rem',
+      },
     },
   },
   plugins: [],
