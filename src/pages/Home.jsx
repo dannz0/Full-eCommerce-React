@@ -1,4 +1,14 @@
+import { About, Categories, Hero } from '../components';
+
 const Home = () => {
-  return <div className='h-999'>Home</div>;
+  // LOADING
+
+  return (
+    <section className='bg-white'>
+      <Hero />
+      <Categories />
+      <About />
+    </section>
+  );
 };
 export default Home;

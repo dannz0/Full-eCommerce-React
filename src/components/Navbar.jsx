@@ -3,6 +3,7 @@ import mobileMenu from '../assets/shared/tablet/icon-hamburger.svg';
 import cartLogo from '../assets/shared/desktop/icon-cart.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className='relative bg-cusBlack lg:px-40'>
-      <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-4 align-center'>
+      <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
           className='flex flex-col justify-center lg:hidden'
@@ -37,40 +38,15 @@ const Navbar = () => {
         </div>
 
         {/* NAVIGATION LINKS */}
-        <div className='hidden gap-8 text-sm lg:flex'>
-          <Link
-            to={'/'}
-            className='self-center tracking-widest text-white uppercase hover:text-cusOrangeDark'
-          >
-            home
-          </Link>
-          <Link
-            to={'/headphones'}
-            className='self-center tracking-widest text-white uppercase hover:text-cusOrangeDark'
-          >
-            headphones
-          </Link>
-
-          <Link
-            to={'/speakers'}
-            className='self-center tracking-widest text-white uppercase hover:text-cusOrangeDark'
-          >
-            speakers
-          </Link>
-
-          <Link
-            to={'/earphones'}
-            className='self-center tracking-widest text-white uppercase hover:text-cusOrangeDark'
-          >
-            earphones
-          </Link>
+        <div className='items-center hidden gap-8 text-sm lg:flex'>
+          <NavLinks />
         </div>
 
         {/* CART LOGO */}
         <div className='flex justify-center cursor-pointer align-center lg:pl-20'>
           <img
             src={cartLogo}
-            className='self-center w-4 h-4 justify-self-center lg:w-5 lg:h-5'
+            className='self-center w-5 h-5 justify-self-center lg:w-6 lg:h-6'
           />
         </div>
       </div>
