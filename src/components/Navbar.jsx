@@ -25,8 +25,8 @@ const Navbar = () => {
         <div
           className={
             isMobileMenuOpen
-              ? `lg:hidden absolute w-screen transition duration-500 ease-out bg-red-200 -left-999 h-128 top-20 translate-x-999 md:h-80 md:top-16`
-              : `lg:hidden absolute w-screen transition duration-500 ease-in bg-red-200 -left-999 h-128 top-20 md:h-80 md:top-16`
+              ? `lg:hidden absolute w-screen transition duration-500 ease-out bg-red-200 -left-999 h-128 top-20 translate-x-999 md:h-128 md:top-16`
+              : `lg:hidden absolute w-screen transition duration-500 ease-in bg-red-200 -left-999 h-128 top-20 md:h-128 md:top-16`
           }
         >
           {/* !! TODO */}

@@ -1,4 +1,4 @@
 const About = () => {
-  return <div className='px-7 md:px-12 lg:px-40'>About</div>;
+  return <section className='section-padding section-margin'>About</section>;
 };
 export default About;

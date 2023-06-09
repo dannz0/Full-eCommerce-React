@@ -29,7 +29,7 @@ const Footer = () => {
         {/* SOCIALS & COPYRIGHT */}
         <div className='flex flex-col w-full gap-6 md:flex-row md:justify-between'>
           <p className='text-sm font-semibold text-center text-cusGrey/50 md:inline-block'>
-            Copyright 2021. All Rights Reserved
+            Copyright 2023. All Rights Reserved
           </p>
 
           <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-48 lg:top-52 xl:top-48'>

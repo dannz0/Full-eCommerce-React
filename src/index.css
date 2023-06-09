@@ -10,16 +10,24 @@
   .social-links {
     @apply flex items-center justify-center w-6 h-6 cursor-pointer fill-white;
   }
+
+  .section-margin {
+    @apply mb-28 md:mb-20 lg:mb-44;
+  }
+
+  .section-padding {
+    @apply px-7 md:px-12 lg:px-40;
+  }
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./assets/home/mobile/image-header.jpg);
 }
 
 @media only screen and (min-width: 480px) {
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url(./assets/home/tablet/image-header.jpg);
     background-position-y: 85%;
   }
@@ -27,7 +35,7 @@
 
 @media only screen and (min-width: 1020px) {
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url(./assets/home/desktop/image-hero.jpg);
     background-position-y: 85%;
   }

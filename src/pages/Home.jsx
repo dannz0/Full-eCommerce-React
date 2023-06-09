@@ -1,14 +1,22 @@
-import { About, Categories, Hero } from '../components';
+import { useEffect } from 'react';
+import { About, Categories, Featured, Hero } from '../components';
+import { getProducts } from '../slices/globalSlice';
+import { useDispatch } from 'react-redux';
 
 const Home = () => {
-  // LOADING
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
-    <section className='bg-white'>
+    <main className='bg-white '>
       <Hero />
       <Categories />
+      <Featured />
       <About />
-    </section>
+    </main>
   );
 };
 export default Home;
