@@ -3,7 +3,7 @@ import { RxChevronRight } from 'react-icons/rx';
 
 const SingleCategory = ({ img, productName, url }) => {
   return (
-    <figure className='relative flex flex-col items-center justify-end max-w-lg gap-4 rounded-lg w-72 sm:w-96 md:w-64 lg:w-80 lg:gap-4 h-44 lg:h-52 bg-cusGrey'>
+    <figure className='relative flex flex-col items-center justify-end w-full max-w-lg gap-4 rounded-lg md:w-64 lg:w-80 lg:gap-4 h-44 lg:h-52 bg-cusGrey'>
       <div className='absolute w-40 h-40 -top-14 lg:w-48 lg:h-48'>
         <img src={img} alt='headphones' />
       </div>

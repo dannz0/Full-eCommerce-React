@@ -1,4 +1,4 @@
-import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -18,12 +18,12 @@ const Hero = () => {
           for the passionate music enthusiast.
         </p>
 
-        <Button
-          text={'see product'}
-          textColor={'white'}
-          color={'cusOrangeDark'}
-          hoverColor={'cusOrangeLight'}
-        />
+        <Link
+          to={'/headphones/xx99-mark-two-headphones'}
+          className='text-white button bg-cusOrangeDark hover:bg-cusOrangeLight'
+        >
+          see product
+        </Link>
       </figure>
     </section>
   );

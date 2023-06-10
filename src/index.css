@@ -7,6 +7,10 @@
     @apply font-bold tracking-widest text-white uppercase hover:text-cusOrangeDark;
   }
 
+  .button {
+    @apply px-8 py-4 text-sm font-semibold tracking-widest uppercase shadow-lg;
+  }
+
   .social-links {
     @apply flex items-center justify-center w-6 h-6 cursor-pointer fill-white;
   }
@@ -16,9 +20,12 @@
   }
 
   .section-padding {
-    @apply px-7 md:px-12 lg:px-40;
+    @apply px-9 sm:px-28 md:px-12 lg:px-40;
   }
 }
+/* ************** */
+/* HERO IMG */
+/* ************** */
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -38,5 +45,29 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url(./assets/home/desktop/image-hero.jpg);
     background-position-y: 85%;
+  }
+}
+
+/* ************** */
+/* FEATURED BG IMG */
+/* ************** */
+
+.featured-bg-image {
+  background-image: url(./assets/home/desktop/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% -10rem;
+}
+
+@media only screen and (min-width: 760px) {
+  .featured-bg-image {
+    background-position: 50% -15rem;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .featured-bg-image {
+    background-size: cover;
+    background-position: -12rem -3rem;
   }
 }
