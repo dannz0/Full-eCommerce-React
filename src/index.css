@@ -32,22 +32,6 @@
     url(./assets/home/mobile/image-header.jpg);
 }
 
-@media only screen and (min-width: 480px) {
-  .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(./assets/home/tablet/image-header.jpg);
-    background-position-y: 85%;
-  }
-}
-
-@media only screen and (min-width: 1020px) {
-  .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(./assets/home/desktop/image-hero.jpg);
-    background-position-y: 85%;
-  }
-}
-
 /* ************** */
 /* FEATURED BG IMG */
 /* ************** */
@@ -59,15 +43,62 @@
   background-position: 50% -10rem;
 }
 
+.zx7-bg-image {
+  background-image: url(./assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.yx1-bg-image {
+  background-image: url(./assets/home/mobile/image-earphones-yx1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (min-width: 480px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(./assets/home/tablet/image-header.jpg);
+    background-position-y: 85%;
+  }
+}
+
+@media only screen and (min-width: 560px) {
+  .zx7-bg-image {
+    background-image: url(./assets/home/tablet/image-speaker-zx7.jpg);
+    background-size: cover;
+  }
+}
+
 @media only screen and (min-width: 760px) {
   .featured-bg-image {
     background-position: 50% -15rem;
   }
+
+  .yx1-bg-image {
+    background-image: url(./assets/home/tablet/image-earphones-yx1.jpg);
+  }
 }
 
 @media only screen and (min-width: 1020px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(./assets/home/desktop/image-hero.jpg);
+    background-position-y: 85%;
+  }
+
   .featured-bg-image {
     background-size: cover;
     background-position: -12rem -3rem;
+  }
+
+  .zx7-bg-image {
+    background-image: url(./assets/home/desktop/image-speaker-zx7.jpg);
+  }
+
+  .yx1-bg-image {
+    background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
   }
 }
