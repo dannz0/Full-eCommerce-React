@@ -5,5 +5,15 @@ import Navbar from './Navbar';
 import Categories from './Categories';
 import Featured from './Featured';
 import About from './About';
+import SingleProductComponent from './SingleProductComponent';
 
-export { Error, Footer, Navbar, Hero, Categories, Featured, About };
+export {
+  Error,
+  Footer,
+  Navbar,
+  Hero,
+  Categories,
+  Featured,
+  About,
+  SingleProductComponent,
+};

@@ -1,9 +1,6 @@
 import zx9SpeakerImgMobile from '../assets/home/mobile/image-speaker-zx9.png';
 import zx9SpeakerImgTablet from '../assets/home/tablet/image-speaker-zx9.png';
 import zx9SpeakerImgDesktop from '../assets/home/desktop/image-speaker-zx9.png';
-import earphoneImgMobile from '../assets/home/mobile/image-earphones-yx1.jpg';
-import earphoneImgTablet from '../assets/home/tablet/image-earphones-yx1.jpg';
-import earphoneImgDesktop from '../assets/home/desktop/image-earphones-yx1.jpg';
 import { Link } from 'react-router-dom';
 
 const Featured = () => {
@@ -22,7 +19,7 @@ const Featured = () => {
         </div>
 
         <div className='flex flex-col items-center justify-center gap-8 lg:items-start lg:mb-24'>
-          <span className='text-4xl font-bold text-center text-white uppercase md:text-5xl lg:text-left'>
+          <span className='text-4xl font-bold tracking-widest text-center text-white uppercase md:text-5xl lg:text-left'>
             zx9<br></br> speaker
           </span>
 
@@ -43,7 +40,7 @@ const Featured = () => {
       {/* SPEAKER ZX7 */}
       <div className='flex items-center justify-between gap-10 px-6 overflow-hidden bg-gray-300 rounded-md py-14 md:py-24 zx7-bg-image lg:px-20 md:h-96'>
         <div className='flex flex-col items-start justify-center gap-10'>
-          <span className='gap-10 text-3xl font-bold text-center text-black uppercase md:text-4xl lg:text-left'>
+          <span className='gap-10 text-3xl font-bold tracking-widest text-center text-black uppercase md:text-4xl lg:text-left'>
             zx7 speaker
           </span>
 
@@ -57,11 +54,11 @@ const Featured = () => {
       </div>
 
       {/* EARPHONE YX1 */}
-      <div className='flex flex-col justify-center gap-10 rounded-md lg:justify-between md:flex-row md:gap-2 '>
+      <div className='flex flex-col justify-center gap-6 rounded-md lg:justify-between md:flex-row md:gap-2 '>
         <div className='w-full overflow-hidden rounded-md h-52 yx1-bg-image md:h-96 md:w-1/2'></div>
 
         <div className='flex flex-col items-start gap-6 px-6 rounded-md md:justify-center md:gap-12 bg-cusGrey py-14 md:py-24 lg:px-20 h-52 md:h-96 md:w-1/2'>
-          <span className='gap-10 text-3xl font-bold text-left text-black uppercase md:text-4xl'>
+          <span className='gap-10 text-3xl font-bold tracking-widest text-left text-black uppercase md:text-4xl'>
             yx1 earphones
           </span>
 
