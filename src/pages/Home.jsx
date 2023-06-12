@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { About, Categories, Featured, Hero } from '../components';
+import { About, MenuCategories, Featured, Hero } from '../components';
 import { getProducts } from '../slices/globalSlice';
 import { useDispatch } from 'react-redux';
 
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main className='bg-white '>
       <Hero />
-      <Categories />
+      <MenuCategories />
       <Featured />
       <About />
     </main>

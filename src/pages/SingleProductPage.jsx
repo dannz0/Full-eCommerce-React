@@ -1,11 +1,14 @@
-import { About, SingleProductComponent } from '../components';
+import { useParams } from 'react-router-dom';
+import { About, Categories, SingleProductComponent } from '../components';
 
 const SingleProductPage = () => {
+  const id = useParams();
+
   return (
     <>
-      <h2>header</h2>
       <SingleProductComponent />
       <h2>recommendation component</h2>
+      <Categories />
       <About />
     </>
   );
