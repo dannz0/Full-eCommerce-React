@@ -7,9 +7,9 @@ const SingleMenuCategory = ({ img, productName, url }) => {
       <div className='absolute w-40 h-40 -top-14 lg:w-48 lg:h-48'>
         <img src={img} alt='headphones' />
       </div>
-      <span className='font-bold tracking-wider text-black uppercase text-md'>
+      <h4 className='font-bold tracking-wider text-black uppercase text-md'>
         {productName}
-      </span>
+      </h4>
       <Link
         to={`/${url}`}
         className='flex items-center mb-6 text-xs font-semibold tracking-widest uppercase hover:text-cusOrangeDark text-slate-500'

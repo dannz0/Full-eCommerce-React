@@ -1,10 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CategoryPage, Checkout, Home, SingleProduct } from './pages';
 import { Error, Navbar, Footer } from './components';
+import ScrollToTop from './util/ScrollToTop';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getProducts } from './slices/globalSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

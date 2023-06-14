@@ -57,7 +57,7 @@ const Featured = () => {
       <div className='flex flex-col justify-center gap-6 rounded-md lg:justify-between md:flex-row md:gap-2 '>
         <div className='w-full overflow-hidden rounded-md h-52 yx1-bg-image md:h-96 md:w-1/2'></div>
 
-        <div className='flex flex-col items-start gap-6 px-6 rounded-md md:justify-center md:gap-12 bg-cusGrey py-14 md:py-24 lg:px-20 h-52 md:h-96 md:w-1/2'>
+        <div className='flex flex-col items-start justify-center gap-6 px-6 rounded-md py-14 md:justify-center md:gap-12 bg-cusGrey md:py-24 lg:px-20 h-52 md:h-96 md:w-1/2'>
           <span className='gap-10 text-3xl font-bold tracking-widest text-left text-black uppercase md:text-4xl'>
             yx1 earphones
           </span>

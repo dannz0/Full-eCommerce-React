@@ -5,13 +5,24 @@ import { API_ID } from '../assets/data';
 const initialState = {
   isLoading: false,
   products: [],
+  filteredProducts: [],
   currentProduct: {},
 };
 
 const globalSlice = createSlice({
   name: 'globalSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    getCategory: (state, { payload }) => {
+      state.isLoading = true;
+      const filtered = state.products.filter(
+        (product) => product.category === payload
+      );
+
+      state.filteredProducts = filtered;
+      state.isLoading = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProducts.pending, (state) => {
@@ -42,5 +53,7 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+
+export const { getCategory } = globalSlice.actions;
 
 export default globalSlice.reducer;

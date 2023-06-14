@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section className='flex flex-col-reverse items-center justify-center gap-6 md:gap-20 lg:flex-row section-padding section-margin'>
       <div className='flex flex-col w-full gap-6 text-center md:gap-10'>
-        <span className='text-3xl font-semibold tracking-widest text-black uppercase md:text-5xl'>
+        <span className='text-3xl font-semibold tracking-widest text-black uppercase md:text-4xl lg:text-5xl'>
           bringing you the <span className='text-cusOrangeDark'>best</span>{' '}
           audio gear
         </span>

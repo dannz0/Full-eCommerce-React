@@ -20,7 +20,15 @@
   }
 
   .section-padding {
-    @apply px-9 sm:px-28 md:px-12 lg:px-40;
+    @apply px-9 sm:px-28 md:px-12 lg:px-40 xl:px-80;
+  }
+
+  .single-category {
+    @apply flex flex-col items-center justify-center gap-6 sm:max-h-128 lg:gap-14 xl:gap-64 xl:w-full md:gap-10;
+  }
+
+  .category-desc {
+    @apply flex flex-col items-center justify-center gap-6 md:gap-8 lg:items-start lg:w-96 lg:gap-12 xl:gap-8 xl:w-1/2;
   }
 }
 /* ************** */

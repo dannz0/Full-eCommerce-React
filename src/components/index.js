@@ -9,8 +9,10 @@ import SingleProductComponent from './SingleProductComponent';
 import Header from './Header';
 import SingleCategory from './SingleCategory';
 import Categories from './Categories';
+import Loading from './Loading';
 
 export {
+  Loading,
   Error,
   Footer,
   Navbar,
