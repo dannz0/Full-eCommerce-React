@@ -33,9 +33,12 @@ const Navbar = () => {
         </div>
 
         {/* COMPANY LOGO */}
-        <div className='flex align-center md:absolute md:left-20 md:top-6 lg:flex lg:relative lg:top-0 lg:left-0'>
+        <Link
+          to={'/'}
+          className='flex align-center md:absolute md:left-20 md:top-6 lg:flex lg:relative lg:top-0 lg:left-0'
+        >
           <img src={logo} alt='audiophile logo' />
-        </div>
+        </Link>
 
         {/* NAVIGATION LINKS */}
         <div className='items-center hidden gap-8 text-sm lg:flex'>

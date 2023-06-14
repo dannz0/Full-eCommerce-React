@@ -3,6 +3,7 @@ import { ReactComponent as Facebook } from '../assets/shared/desktop/icon-facebo
 import { ReactComponent as Twitter } from '../assets/shared/desktop/icon-twitter.svg';
 import { ReactComponent as Instagram } from '../assets/shared/desktop/icon-instagram.svg';
 import NavLinks from './NavLinks';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,9 +12,9 @@ const Footer = () => {
       {/* ORANGE BORDER */}
       <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-10 py-7 md:px-0 md:items-start'>
         {/* COMPANY LOGO */}
-        <div className='flex'>
+        <Link to={'/'} className='flex'>
           <img src={logo} alt='audiophile logo' />
-        </div>
+        </Link>
         {/* NAVIGATION LINKS */}
         <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-48'>
           <NavLinks />
