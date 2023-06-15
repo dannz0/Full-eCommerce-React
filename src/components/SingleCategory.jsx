@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import img from '../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg';
+import { getImgUrl } from '../util/helpers';
+import { useSelector } from 'react-redux';
+import Loading from './Loading';
 
 const SingleCategory = ({
   slug,
@@ -11,9 +14,11 @@ const SingleCategory = ({
 }) => {
   const { mobile, tablet, desktop } = categoryImage;
 
-  const getImgUrl = (name) => {
-    return new URL(`${name}`, import.meta.url).href;
-  };
+  const { singleCategoryIsLoading } = useSelector((state) => state.global);
+
+  if (singleCategoryIsLoading) {
+    return <Loading />;
+  }
 
   return (
     // CONTAINER
@@ -25,14 +30,14 @@ const SingleCategory = ({
       }
     >
       {/* IMAGE */}
-      <div className='flex items-center justify-center object-contain w-full overflow-hidden rounded-md xl:h-128 xl:w-1/2 lg:h-96 lg:w-96'>
+      <div className='flex items-center justify-center w-full overflow-hidden rounded-md max-h-96 lg:h-full lg:w-full md:max-h-72 lg:max-h-fit'>
         <img
           src={getImgUrl(mobile)}
           srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(
             tablet
           )} 1020w, ${getImgUrl(desktop)} 1440w`}
           alt={name}
-          className='object-contain w-full h-full '
+          className='w-full h-full'
         />
       </div>
 

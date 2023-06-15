@@ -10,6 +10,7 @@ import Header from './Header';
 import SingleCategory from './SingleCategory';
 import Categories from './Categories';
 import Loading from './Loading';
+import SingleMenuCategory from './SingleMenuCategory';
 
 export {
   Loading,
@@ -20,6 +21,7 @@ export {
   MenuCategories,
   Featured,
   About,
+  SingleMenuCategory,
   SingleProductComponent,
   Header,
   Categories,

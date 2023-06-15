@@ -3,7 +3,9 @@ import { customFetch } from '../util/axios';
 import { API_ID } from '../assets/data';
 
 const initialState = {
-  isLoading: false,
+  isLoading: true,
+  singleProdIsLoading: true,
+  singleCategoryIsLoading: true,
   products: [],
   filteredProducts: [],
   currentProduct: {},
@@ -14,13 +16,29 @@ const globalSlice = createSlice({
   initialState,
   reducers: {
     getCategory: (state, { payload }) => {
-      state.isLoading = true;
+      state.singleCategoryIsLoading = true;
       const filtered = state.products.filter(
         (product) => product.category === payload
       );
 
       state.filteredProducts = filtered;
-      state.isLoading = false;
+
+      if (state.filteredProducts) {
+        state.singleCategoryIsLoading = false;
+      }
+    },
+
+    getSingleProduct: (state, { payload }) => {
+      state.singleProdIsLoading = true;
+      const filtered = state.products.filter(
+        (product) => product.slug === payload
+      );
+
+      state.currentProduct = filtered[0];
+
+      if (state.currentProduct) {
+        state.singleProdIsLoading = false;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -54,6 +72,6 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-export const { getCategory } = globalSlice.actions;
+export const { getCategory, getSingleProduct } = globalSlice.actions;
 
 export default globalSlice.reducer;
