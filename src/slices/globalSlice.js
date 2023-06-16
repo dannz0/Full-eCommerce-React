@@ -31,6 +31,7 @@ const globalSlice = createSlice({
     getSingleProduct: (state, { payload }) => {
       state.singleProdIsLoading = true;
       const filtered = state.products.filter(
+        // using the slug instead of id (did not make unique ids)
         (product) => product.slug === payload
       );
 
