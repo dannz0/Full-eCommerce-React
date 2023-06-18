@@ -5,7 +5,7 @@ import SingleCategory from './SingleMenuCategory';
 
 const MenuCategories = () => {
   return (
-    <section className='flex flex-col items-center justify-center gap-20 section-padding section-margin md:flex-row md:gap-4 lg:gap-20'>
+    <section className='flex flex-col items-center justify-between gap-20 section-padding section-margin md:flex-row md:gap-4 lg:gap-20'>
       <SingleCategory
         img={imgHeadphones}
         productName={'headphones'}

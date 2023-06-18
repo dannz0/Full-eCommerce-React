@@ -11,6 +11,7 @@ import SingleCategory from './SingleCategory';
 import Categories from './Categories';
 import Loading from './Loading';
 import SingleMenuCategory from './SingleMenuCategory';
+import YouMayAlsoLike from './YouMayAlsoLike';
 
 export {
   Loading,
@@ -26,4 +27,5 @@ export {
   Header,
   Categories,
   SingleCategory,
+  YouMayAlsoLike,
 };

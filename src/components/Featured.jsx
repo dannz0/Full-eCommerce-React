@@ -63,7 +63,7 @@ const Featured = () => {
           </span>
 
           <Link
-            to={`/speakers/yx1-earphone`}
+            to={`/earphones/yx1-earphones`}
             className='text-black bg-transparent border border-black button hover:bg-black hover:text-white'
           >
             see product

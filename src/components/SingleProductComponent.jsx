@@ -6,9 +6,9 @@ import Loading from './Loading';
 import ProductCard from './ProductCard';
 import Gallery from './Gallery';
 import ProductDetails from './ProductDetails';
+import Error from './Error';
 
-const SingleProductComponent = () => {
-  const { id } = useParams();
+const SingleProductComponent = ({ id }) => {
   const dispatch = useDispatch();
   const { products, singleProdIsLoading, currentProduct } = useSelector(
     (state) => state.global
@@ -38,6 +38,10 @@ const SingleProductComponent = () => {
 
   if (singleProdIsLoading) {
     return <Loading />;
+  }
+
+  if (currentProduct === '404') {
+    return <Error />;
   }
 
   const { gallery, includes, features } = currentProduct;

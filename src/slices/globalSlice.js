@@ -7,8 +7,8 @@ const initialState = {
   singleProdIsLoading: true,
   singleCategoryIsLoading: true,
   products: [],
-  filteredProducts: [],
   currentProduct: {},
+  filteredProducts: [],
 };
 
 const globalSlice = createSlice({
@@ -30,12 +30,15 @@ const globalSlice = createSlice({
 
     getSingleProduct: (state, { payload }) => {
       state.singleProdIsLoading = true;
+
+      if (!state.products.length) return;
+
       const filtered = state.products.filter(
         // using the slug instead of id (did not make unique ids)
         (product) => product.slug === payload
       );
 
-      state.currentProduct = filtered[0];
+      state.currentProduct = filtered[0] || '404';
 
       if (state.currentProduct) {
         state.singleProdIsLoading = false;

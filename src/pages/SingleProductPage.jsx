@@ -1,14 +1,18 @@
 import { useParams } from 'react-router-dom';
-import { About, MenuCategories, SingleProductComponent } from '../components';
+import {
+  About,
+  MenuCategories,
+  SingleProductComponent,
+  YouMayAlsoLike,
+} from '../components';
 
 const SingleProductPage = () => {
-  const id = useParams();
-  console.log(id);
+  const { id } = useParams();
 
   return (
     <>
-      <SingleProductComponent />
-      <h2>recommendation component</h2>
+      <SingleProductComponent id={id} />
+      <YouMayAlsoLike id={id} />
       <MenuCategories />
       <About />
     </>
