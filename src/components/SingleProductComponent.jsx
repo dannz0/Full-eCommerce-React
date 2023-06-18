@@ -52,6 +52,7 @@ const SingleProductComponent = ({ id }) => {
         <ProductCard
           {...currentProduct}
           productQuantity={productQuantity}
+          setproductQuantity={setproductQuantity}
           handleQuantity={handleQuantity}
         />
         <ProductDetails includes={includes} features={features} />

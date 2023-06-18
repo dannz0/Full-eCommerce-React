@@ -7,8 +7,40 @@ const initialState = {
 const cartSlice = createSlice({
   name: 'cartSlice',
   initialState,
-  //   reducers: {},
-  //   extraReducers: (builder) => {},
+  reducers: {
+    addToCart: (state, { payload }) => {
+      let tempCart;
+
+      tempCart = state.cart.find((product) => product.slug === payload.slug);
+
+      if (tempCart) {
+        const index = state.cart.findIndex(
+          (prod) => prod.name === payload.name
+        );
+
+        tempCart = {
+          ...tempCart,
+          productQuantity: tempCart.productQuantity + payload.productQuantity,
+          price:
+            payload.price *
+            (payload.productQuantity + tempCart.productQuantity),
+        };
+
+        state.cart.splice(index, 1, tempCart);
+      }
+
+      if (!tempCart) {
+        tempCart = {
+          ...payload,
+          price: payload.price * payload.productQuantity,
+        };
+
+        state.cart.push(tempCart);
+      }
+    },
+  },
 });
 
 export default cartSlice.reducer;
+
+export const { addToCart } = cartSlice.actions;

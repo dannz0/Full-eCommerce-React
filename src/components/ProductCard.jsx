@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { getImgUrl } from '../util/helpers';
 import { HiPlusSmall, HiMinusSmall } from 'react-icons/hi2';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../slices/cartSlice';
 
 const ProductCard = ({
   category,
@@ -16,10 +18,12 @@ const ProductCard = ({
   price,
   slug,
   productQuantity,
+  setproductQuantity,
   handleQuantity,
 }) => {
   const { mobile, tablet, desktop } = image;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     // CONTAINER
@@ -77,7 +81,23 @@ const ProductCard = ({
 
           {/* add to cart btn */}
           <div className='w-3/5'>
-            <button className='w-full h-full text-white sm:w-48 xl:w-52 button bg-cusOrangeDark hover:bg-cusOrangeLight'>
+            <button
+              onClick={() => {
+                dispatch(
+                  addToCart({
+                    productQuantity,
+                    price,
+                    name,
+                    prod_id,
+                    image,
+                    slug,
+                  })
+                );
+
+                setproductQuantity(1);
+              }}
+              className='w-full h-full text-white sm:w-48 xl:w-52 button bg-cusOrangeDark hover:bg-cusOrangeLight'
+            >
               add to cart
             </button>
           </div>

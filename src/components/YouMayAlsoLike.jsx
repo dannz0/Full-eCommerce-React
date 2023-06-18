@@ -22,11 +22,11 @@ const YouMayAlsoLike = ({ id }) => {
       <div className='flex flex-col gap-10 md:flex-row sm:gap-14'>
         {currentProduct.others.map((product) => {
           const { desktop, mobile, tablet } = product.image;
-          console.log(desktop);
+
           return (
             <div
               key={product.slug}
-              className='flex flex-col items-center justify-center gap-4 xl:gap-10'
+              className='flex flex-col items-center justify-between gap-4 xl:gap-10'
             >
               <div className='overflow-hidden rounded-md'>
                 <img
