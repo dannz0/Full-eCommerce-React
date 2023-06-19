@@ -21,7 +21,7 @@ const cartSlice = createSlice({
         tempCart = {
           ...tempCart,
           productQuantity: tempCart.productQuantity + payload.productQuantity,
-          price:
+          prices:
             payload.price *
             (payload.productQuantity + tempCart.productQuantity),
         };
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       if (!tempCart) {
         tempCart = {
           ...payload,
-          price: payload.price * payload.productQuantity,
+          prices: payload.price * payload.productQuantity,
         };
 
         state.cart.push(tempCart);
