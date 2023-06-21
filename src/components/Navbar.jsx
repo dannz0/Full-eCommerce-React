@@ -4,6 +4,7 @@ import cartLogo from '../assets/shared/desktop/icon-cart.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import NavLinks from './NavLinks';
+import Cart from './Cart';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
@@ -46,10 +47,19 @@ const Navbar = () => {
         </div>
 
         {/* CART LOGO */}
-        <div className='flex justify-center cursor-pointer align-center lg:pl-20'>
+
+        <div
+          className='flex items-center justify-center cursor-pointer lg:pl-20 '
+          onMouseEnter={() => setIsCartHovered(true)}
+          onClick={() => setIsCartHovered(!isCartHovered)}
+        >
           <img
             src={cartLogo}
             className='self-center w-5 h-5 justify-self-center lg:w-6 lg:h-6'
+          />
+          <Cart
+            isCartHovered={isCartHovered}
+            setIsCartHovered={setIsCartHovered}
           />
         </div>
       </div>

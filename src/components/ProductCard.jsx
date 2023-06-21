@@ -35,6 +35,7 @@ const ProductCard = ({
       >
         Go back
       </button>
+
       {/* IMG CONTAINER */}
       <div className='flex items-center justify-center w-full overflow-hidden rounded-md max-h-80 md:max-h-full md:w-96 lg:h-full lg:w-full lg:max-h-fit'>
         <img
@@ -46,6 +47,7 @@ const ProductCard = ({
           className='w-full h-full'
         />
       </div>
+
       {/* PROD DETAILS  */}
       <div className='flex flex-col self-start justify-center gap-6 lg:w-full lg:gap-10 md:gap-10 md:w-5/6 xl:self-center'>
         {isNew && (
