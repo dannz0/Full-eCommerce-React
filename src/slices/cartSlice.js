@@ -46,19 +46,22 @@ const cartSlice = createSlice({
       }
     },
 
-    handleQuantity: (action) => {
-      if (action === 'inc') {
-        // capping at 20
-        if (productQuantity >= 20) return;
+    handleQuantity: (state, { payload }) => {
+      const index = state.cart.findIndex((prod) => prod.slug === payload.slug);
+      const product = state.cart.at(index);
 
-        !!dothis;
+      if (payload.action === 'inc') {
+        // capping at 20
+        if (product.productQuantity >= 20) return;
+
+        product.productQuantity = product.productQuantity + 1;
         return;
       }
 
-      if (productQuantity === 1) return;
+      if (product.productQuantity === 1) return;
 
-      if (action === 'dec') {
-        setproductQuantity(productQuantity - 1);
+      if (payload.action === 'dec') {
+        product.productQuantity = product.productQuantity - 1;
         return;
       }
     },
@@ -67,4 +70,4 @@ const cartSlice = createSlice({
 
 export default cartSlice.reducer;
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, handleQuantity } = cartSlice.actions;

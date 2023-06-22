@@ -1,10 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getImgUrl } from '../util/helpers';
 import { HiPlusSmall, HiMinusSmall } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+import { handleQuantity } from '../slices/cartSlice';
 
 const Cart = ({ isCartHovered, setIsCartHovered }) => {
   const { cart, totalPrice } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -13,7 +15,7 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
           ? `absolute left-0 z-10 w-screen h-screen top-20 bg-black/50 flex justify-center md:justify-end md:top-[4.8rem] lg:top-[5.3rem] xl:top-[5.2rem]`
           : `hidden`
       }
-      onClick={() => setIsCartHovered(false)}
+      // onClick={() => setIsCartHovered(false)}
     >
       <div
         className={isCartHovered ? `flex cart` : `hidden cart`}
@@ -52,7 +54,11 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
 
                   <div className='flex self-center justify-between px-4 py-2 ml-6 bg-gray-100 w-28 xl:mr-2'>
                     <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
-                      <button onClick={() => handleQuantity('dec')}>
+                      <button
+                        onClick={() =>
+                          dispatch(handleQuantity({ action: 'dec', slug }))
+                        }
+                      >
                         <HiMinusSmall />
                       </button>
                     </div>
@@ -60,7 +66,11 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
                       {productQuantity}
                     </div>
                     <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
-                      <button onClick={() => handleQuantity('inc')}>
+                      <button
+                        onClick={() =>
+                          dispatch(handleQuantity({ action: 'inc', slug }))
+                        }
+                      >
                         <HiPlusSmall />
                       </button>
                     </div>

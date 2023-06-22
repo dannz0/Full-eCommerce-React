@@ -51,7 +51,7 @@ const Navbar = () => {
         <div
           className='flex items-center justify-center cursor-pointer lg:pl-20 '
           onMouseEnter={() => setIsCartHovered(true)}
-          onClick={() => setIsCartHovered(!isCartHovered)}
+          // onClick={() => setIsCartHovered(!isCartHovered)}
         >
           <img
             src={cartLogo}
