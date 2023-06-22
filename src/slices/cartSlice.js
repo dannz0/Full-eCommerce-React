@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cart: [],
+  totalPrice: 0,
 };
 
 const cartSlice = createSlice({
@@ -26,6 +27,9 @@ const cartSlice = createSlice({
             (payload.productQuantity + tempCart.productQuantity),
         };
 
+        state.totalPrice =
+          payload.price * (payload.productQuantity + tempCart.productQuantity);
+
         state.cart.splice(index, 1, tempCart);
       }
 
@@ -35,7 +39,27 @@ const cartSlice = createSlice({
           prices: payload.price * payload.productQuantity,
         };
 
+        state.totalPrice =
+          payload.price * payload.productQuantity + state.totalPrice;
+
         state.cart.push(tempCart);
+      }
+    },
+
+    handleQuantity: (action) => {
+      if (action === 'inc') {
+        // capping at 20
+        if (productQuantity >= 20) return;
+
+        !!dothis;
+        return;
+      }
+
+      if (productQuantity === 1) return;
+
+      if (action === 'dec') {
+        setproductQuantity(productQuantity - 1);
+        return;
       }
     },
   },

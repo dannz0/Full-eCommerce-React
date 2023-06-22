@@ -32,7 +32,7 @@
   }
 
   .cart {
-    @apply z-20 flex flex-col w-full py-10 bg-red-200 rounded-md mt-14 h-96 mx-9 sm:mx-28 md:mx-12 lg:mx-0 section-padding md:w-1/2 lg:w-80 lg:mr-52 lg:px-6;
+    @apply z-20 flex flex-col justify-between w-full gap-8 px-8 py-10 bg-white rounded-md shadow-lg h-3/4 mt-14 mx-9 sm:mx-28 md:mx-12 lg:mx-0 md:w-1/2 lg:w-96 lg:mr-52 lg:px-6 lg:h-128;
   }
 }
 /* ************** */

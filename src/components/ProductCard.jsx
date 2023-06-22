@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { getImgUrl } from '../util/helpers';
-import { HiPlusSmall, HiMinusSmall } from 'react-icons/hi2';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
+import QuantityBtn from './QuantityBtn';
 
 const ProductCard = ({
   category,
@@ -65,21 +65,10 @@ const ProductCard = ({
 
         {/* quantity display */}
         <div className='flex gap-3 xl:w-96'>
-          <div className='flex justify-between w-2/5 px-5 py-3 sm:w-2/6 bg-slate-100'>
-            <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
-              <button onClick={() => handleQuantity('dec')}>
-                <HiMinusSmall />
-              </button>
-            </div>
-            <div className='flex items-center justify-center w-5 font-bold'>
-              {productQuantity}
-            </div>
-            <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
-              <button onClick={() => handleQuantity('inc')}>
-                <HiPlusSmall />
-              </button>
-            </div>
-          </div>
+          <QuantityBtn
+            handleQuantity={handleQuantity}
+            productQuantity={productQuantity}
+          />
 
           {/* add to cart btn */}
           <div className='w-3/5'>
