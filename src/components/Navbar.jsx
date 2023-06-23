@@ -11,7 +11,10 @@ const Navbar = () => {
   const [isCartHovered, setIsCartHovered] = useState(false);
 
   return (
-    <nav className='relative bg-cusBlack lg:px-40'>
+    <nav
+      className='relative bg-cusBlack lg:px-40'
+      onScroll={() => console.log('scroll')}
+    >
       <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
@@ -51,11 +54,11 @@ const Navbar = () => {
         <div
           className='flex items-center justify-center cursor-pointer lg:pl-20 '
           onMouseEnter={() => setIsCartHovered(true)}
-          // onClick={() => setIsCartHovered(!isCartHovered)}
         >
           <img
             src={cartLogo}
             className='self-center w-5 h-5 justify-self-center lg:w-6 lg:h-6'
+            onClick={() => setIsCartHovered(true)}
           />
           <Cart
             isCartHovered={isCartHovered}

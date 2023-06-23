@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d87d4a #999;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #999;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d87d4a;
+  border-radius: 10px;
+  border: 2px solid #999;
+}
+
 @layer components {
   .nav-links {
     @apply font-bold tracking-widest text-white uppercase hover:text-cusOrangeDark;

@@ -2,20 +2,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getImgUrl } from '../util/helpers';
 import { HiPlusSmall, HiMinusSmall } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
-import { handleQuantity } from '../slices/cartSlice';
+import { handleQuantity, removeAllItems } from '../slices/cartSlice';
+import { useEffect } from 'react';
 
 const Cart = ({ isCartHovered, setIsCartHovered }) => {
   const { cart, totalPrice } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!isCartHovered) return;
+
+      setIsCartHovered(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isCartHovered]);
+
   return (
     <div
       className={
         isCartHovered
-          ? `absolute left-0 z-10 w-screen h-screen top-20 bg-black/50 flex justify-center md:justify-end md:top-[4.8rem] lg:top-[5.3rem] xl:top-[5.2rem]`
+          ? `absolute left-0 z-10 w-screen h-screen top-20 bg-black/50 flex justify-center md:justify-end md:top-[4.8rem] lg:top-[5.2rem] xl:top-[5.2rem]`
           : `hidden`
       }
-      // onClick={() => setIsCartHovered(false)}
+      onClick={(e) => {
+        if (e.target.closest('.cart')) return;
+
+        setIsCartHovered(false);
+      }}
     >
       <div
         className={isCartHovered ? `flex cart` : `hidden cart`}
@@ -25,7 +44,10 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
           <span className='text-xl font-bold tracking-wide text-black uppercase'>
             cart (2)
           </span>
-          <button className='text-sm text-gray-500 underline'>
+          <button
+            className='text-sm text-gray-500 underline hover:text-cusOrangeDark'
+            onClick={() => dispatch(removeAllItems())}
+          >
             Remove all
           </button>
         </div>

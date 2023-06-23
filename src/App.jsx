@@ -5,6 +5,8 @@ import ScrollToTop from './util/ScrollToTop';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getProducts } from './slices/globalSlice';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +19,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
+      <ToastContainer position='top-center' theme='light' autoClose={1000} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='headphones' element={<CategoryPage />} />
