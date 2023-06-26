@@ -42,7 +42,7 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
       >
         <div className='flex items-center justify-between'>
           <span className='text-xl font-bold tracking-wide text-black uppercase'>
-            cart (2)
+            {`Cart (${cart.length})`}
           </span>
           <button
             className='text-sm text-gray-500 underline hover:text-cusOrangeDark'

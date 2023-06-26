@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { RxChevronRight } from 'react-icons/rx';
 
-const SingleMenuCategory = ({ img, productName, url }) => {
+const SingleMenuCategory = ({ img, productName, url, setisMobileMenuOpen }) => {
   return (
     <figure className='relative flex flex-col items-center justify-end w-full max-w-lg gap-4 rounded-lg md:w-64 lg:w-80 xl:w-full xl:h-56 lg:gap-4 h-44 lg:h-52 bg-cusGrey'>
       <div className='absolute w-40 h-40 -top-14 lg:w-48 lg:h-48'>
@@ -13,6 +13,7 @@ const SingleMenuCategory = ({ img, productName, url }) => {
       <Link
         to={`/${url}`}
         className='flex items-center mb-6 text-xs font-semibold tracking-widest uppercase hover:text-cusOrangeDark text-slate-500'
+        onClick={() => setisMobileMenuOpen(false)}
       >
         shop <RxChevronRight className='w-5 h-5 text-cusOrangeDark' />
       </Link>
