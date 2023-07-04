@@ -31,13 +31,13 @@ const ProductCard = ({
       {/* BACK BTN */}
       <button
         onClick={() => navigate(`/${category}`)}
-        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[13rem] xl:left-[20rem]'
+        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[9rem] xl:left-[20rem] hover:text-cusOrangeDark'
       >
         Go back
       </button>
 
       {/* IMG CONTAINER */}
-      <div className='flex items-center justify-center w-full overflow-hidden rounded-md max-h-80 md:max-h-full md:w-96 lg:h-full lg:w-full lg:max-h-fit'>
+      <div className='flex items-center justify-center w-full overflow-hidden rounded-md sm:mb-8 md:mb-0 max-h-80 md:max-h-full md:w-96 lg:h-full lg:w-full lg:max-h-fit'>
         <img
           src={getImgUrl(mobile)}
           srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(

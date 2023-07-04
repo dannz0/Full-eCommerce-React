@@ -1,5 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { CategoryPage, Checkout, Home, SingleProduct } from './pages';
+import {
+  CategoryPage,
+  Checkout,
+  Home,
+  ProtectedRoute,
+  SingleProduct,
+} from './pages';
 import { Error, Navbar, Footer } from './components';
 import ScrollToTop from './util/ScrollToTop';
 import { useDispatch } from 'react-redux';
@@ -28,7 +34,14 @@ function App() {
         <Route path='earphones/:id' element={<SingleProduct />} />
         <Route path='speakers' element={<CategoryPage />} />
         <Route path='speakers/:id' element={<SingleProduct />} />
-        <Route path='checkout' element={<Checkout />} />
+        <Route
+          path='checkout'
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

@@ -14,12 +14,12 @@ const YouMayAlsoLike = ({ id }) => {
 
   return (
     <section className='mb-44 section-padding xl:mb-52'>
-      <div className='flex items-center justify-center mb-6 lg:mb-14'>
-        <span className='text-lg font-bold tracking-wide text-center text-black uppercase xl:text-3xl'>
+      <div className='flex items-center justify-center mb-6 sm:mb-10 lg:mb-14'>
+        <span className='text-lg font-bold tracking-wide text-center text-black uppercase sm:text-xl xl:text-3xl'>
           you may also like
         </span>
       </div>
-      <div className='flex flex-col gap-10 md:flex-row sm:gap-14'>
+      <div className='flex flex-col gap-10 md:flex-row md:justify-between sm:gap-16 md:gap-4'>
         {currentProduct.others.map((product) => {
           const { desktop, mobile, tablet } = product.image;
 
@@ -28,13 +28,14 @@ const YouMayAlsoLike = ({ id }) => {
               key={product.slug}
               className='flex flex-col items-center justify-between gap-4 xl:gap-10'
             >
-              <div className='overflow-hidden rounded-md'>
+              <div className='overflow-hidden rounded-md md:h-72 xl:h-80'>
                 <img
                   src={`${getImgUrl(`${getImgUrl(mobile)}`)}`}
                   alt={product.name}
                   srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(
                     tablet
                   )} 1020w, ${getImgUrl(desktop)} 1440w`}
+                  className='md:h-72 xl:h-80'
                 />
               </div>
 

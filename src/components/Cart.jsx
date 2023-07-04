@@ -8,26 +8,39 @@ import { useEffect } from 'react';
 const Cart = ({ isCartHovered, setIsCartHovered }) => {
   const { cart, totalPrice } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const bg = document.querySelector('#bg');
+
+  // For hiding car if user scrolls
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!isCartHovered) return;
+
+  //     setIsCartHovered(false);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [isCartHovered]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!isCartHovered) return;
-
-      setIsCartHovered(false);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    if (isCartHovered) {
+      bg.classList.remove('hidden');
+      bg.classList.add('block');
+    }
+    if (!isCartHovered) {
+      bg.classList.remove('block');
+      bg.classList.add('hidden');
+    }
   }, [isCartHovered]);
 
   return (
     <div
       className={
         isCartHovered
-          ? `absolute left-0 z-10 w-screen h-screen top-20 bg-black/50 flex justify-center md:justify-end md:top-[4.8rem] lg:top-[5.2rem] xl:top-[5.2rem]`
+          ? `absolute left-0 z-10 w-screen bg-black-75 h-screen top-20 flex justify-center md:justify-end md:top-[4.8rem] lg:top-[5.2rem] xl:top-[5.2rem]`
           : `hidden`
       }
       onClick={(e) => {

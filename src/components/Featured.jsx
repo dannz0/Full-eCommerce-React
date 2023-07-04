@@ -40,7 +40,7 @@ const Featured = () => {
       {/* SPEAKER ZX7 */}
       <div className='flex items-center justify-between gap-10 px-6 overflow-hidden bg-gray-300 rounded-md py-14 md:py-24 zx7-bg-image lg:px-20 md:h-96'>
         <div className='flex flex-col items-start justify-center gap-10'>
-          <span className='gap-10 text-3xl font-bold tracking-widest text-center text-black uppercase md:text-4xl lg:text-left'>
+          <span className='gap-10 text-3xl font-bold tracking-widest text-center text-black uppercase md:text-4xl lg:text-left backdrop-blur-sm backdrop-opacity-20'>
             zx7 speaker
           </span>
 

@@ -40,17 +40,18 @@ const Navbar = () => {
         {/* MOBILE MENU */}
 
         <div
+          // old bg filter
           className={
             isMobileMenuOpen
-              ? `lg:hidden absolute  w-screen h-screen bg-black/75 -left-999  top-20 translate-x-999 md:top-[4.85rem] z-10 pb-10 md:pb-20 rounded-b-md `
-              : `lg:hidden  w-screen  h-screen transition duration-500 bg-black/75 -left-999  top-20  absolute z-10 pb-14 md:pb-20 rounded-b-md md:top-[4.85rem] `
+              ? `lg:hidden absolute w-screen h-screen -left-999 top-20 translate-x-999 md:top-[4.85rem] z-10 pb-10 md:pb-20 rounded-b-md `
+              : `lg:hidden  w-screen  h-screen transition duration-500 -left-999  top-20  absolute z-10 pb-14 md:pb-20 rounded-b-md md:top-[4.85rem] `
           }
         >
           <div
             className={
               isMobileMenuOpen
-                ? `lg:hidden absolute  w-screen transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md `
-                : `lg:hidden  w-screen transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md  `
+                ? `lg:hidden absolute  w-[calc(100vw-0.5rem)] transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md`
+                : `lg:hidden  w-[calc(100vw-0.5rem)] transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md  `
             }
           >
             <div className='flex flex-col items-center justify-center gap-20 px-6 mt-20 md:gap-6 md:flex-row'>
@@ -98,7 +99,7 @@ const Navbar = () => {
           <img
             src={cartLogo}
             className='self-center w-5 h-5 justify-self-center lg:w-6 lg:h-6'
-            onClick={() => setIsCartHovered(true)}
+            onClick={() => setIsCartHovered(!isCartHovered)}
           />
           <Cart
             isCartHovered={isCartHovered}

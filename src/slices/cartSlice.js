@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import {
+  getLocalItem,
+  getLocalTotalPrice,
+  setLocalItem,
+} from '../util/helpers';
 
 const initialState = {
-  cart: [],
-  totalPrice: 0,
+  cart: getLocalItem(),
+  totalPrice: getLocalTotalPrice(),
 };
 
 const cartSlice = createSlice({
@@ -28,8 +33,7 @@ const cartSlice = createSlice({
             (payload.productQuantity + tempCart.productQuantity),
         };
 
-        state.totalPrice =
-          payload.price * (payload.productQuantity + tempCart.productQuantity);
+        state.totalPrice += tempCart.prices;
 
         state.cart.splice(index, 1, tempCart);
       }
@@ -40,13 +44,13 @@ const cartSlice = createSlice({
           prices: payload.price * payload.productQuantity,
         };
 
-        state.totalPrice =
-          payload.price * payload.productQuantity + state.totalPrice;
+        state.totalPrice += tempCart.prices;
 
         state.cart.push(tempCart);
       }
 
       toast.success('Item added to your cart!');
+      setLocalItem(state.cart, state.totalPrice);
     },
 
     handleQuantity: (state, { payload }) => {
@@ -57,23 +61,39 @@ const cartSlice = createSlice({
         // capping at 20
         if (product.productQuantity >= 20) return;
 
-        product.productQuantity = product.productQuantity + 1;
+        product.productQuantity++;
+        state.totalPrice += product.price;
+
+        setLocalItem(state.cart, state.totalPrice);
         return;
       }
 
       if (product.productQuantity === 1) {
         state.cart = state.cart.filter((prod) => prod.slug !== product.slug);
+        state.totalPrice -= product.price;
+
         toast.error(`Item removed!`);
+
+        setLocalItem(state.cart, state.totalPrice);
+        return;
       }
 
       if (payload.action === 'dec') {
-        product.productQuantity = product.productQuantity - 1;
+        product.productQuantity--;
+        state.totalPrice -= product.price;
+
+        setLocalItem(state.cart, state.totalPrice);
         return;
       }
     },
 
     removeAllItems: (state) => {
+      if (!state.cart.length) return;
+
       state.cart = [];
+      state.totalPrice = 0;
+
+      setLocalItem(state.cart, state.totalPrice);
       toast.error(`All items removed!`);
     },
   },
