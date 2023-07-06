@@ -12,8 +12,12 @@ import Categories from './Categories';
 import Loading from './Loading';
 import SingleMenuCategory from './SingleMenuCategory';
 import YouMayAlsoLike from './YouMayAlsoLike';
+import Form from './Form';
+import Summary from './Summary';
 
 export {
+  Summary,
+  Form,
   Loading,
   Error,
   Footer,

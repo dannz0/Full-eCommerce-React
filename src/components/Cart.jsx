@@ -87,7 +87,7 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
                     </div>
                   </div>
 
-                  <div className='flex self-center justify-between px-4 py-2 ml-6 bg-gray-100 w-28 xl:mr-2'>
+                  <div className='flex self-center justify-between px-4 py-2 ml-6 mr-4 bg-gray-100 w-28'>
                     <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
                       <button
                         onClick={() =>
@@ -132,7 +132,11 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
         )}
 
         {cart.length > 0 && (
-          <Link className='w-full text-center text-white button bg-cusOrangeDark hover:bg-cusOrangeLight'>
+          <Link
+            to={`/checkout`}
+            className='w-full text-center text-white button bg-cusOrangeDark hover:bg-cusOrangeLight'
+            onClick={() => setIsCartHovered(false)}
+          >
             checkout
           </Link>
         )}

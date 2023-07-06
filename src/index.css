@@ -46,7 +46,7 @@ html {
   }
 
   .section-padding {
-    @apply px-9 sm:px-28 md:px-12 lg:px-36 xl:px-80;
+    @apply px-9 sm:px-24 md:px-12 lg:px-36 xl:px-80;
   }
 
   .single-category {
