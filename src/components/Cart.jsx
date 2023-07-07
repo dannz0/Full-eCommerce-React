@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { handleQuantity, removeAllItems } from '../slices/cartSlice';
 import { useEffect } from 'react';
 
-const Cart = ({ isCartHovered, setIsCartHovered }) => {
+const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
   const { cart, totalPrice } = useSelector((state) => state.cart);
+  const { bgFilter } = useSelector((state) => state.global);
   const dispatch = useDispatch();
   const bg = document.querySelector('#bg');
 
@@ -26,6 +27,8 @@ const Cart = ({ isCartHovered, setIsCartHovered }) => {
   // }, [isCartHovered]);
 
   useEffect(() => {
+    if (isMobileMenuOpen) return;
+
     if (isCartHovered) {
       bg.classList.remove('hidden');
       bg.classList.add('block');

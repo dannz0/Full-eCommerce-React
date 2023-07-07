@@ -9,6 +9,9 @@ import {
 const initialState = {
   cart: getLocalItem(),
   totalPrice: getLocalTotalPrice(),
+  totalPriceVat: 0,
+  shipping: 50,
+  grandTotal: 0,
 };
 
 const cartSlice = createSlice({
@@ -33,8 +36,6 @@ const cartSlice = createSlice({
             (payload.productQuantity + tempCart.productQuantity),
         };
 
-        state.totalPrice += tempCart.prices;
-
         state.cart.splice(index, 1, tempCart);
       }
 
@@ -44,10 +45,13 @@ const cartSlice = createSlice({
           prices: payload.price * payload.productQuantity,
         };
 
-        state.totalPrice += tempCart.prices;
-
         state.cart.push(tempCart);
       }
+
+      state.totalPrice += tempCart.prices;
+      state.totalPriceVat = state.totalPrice * 0.2;
+      state.grandTotal =
+        state.totalPriceVat + state.shipping + state.totalPrice;
 
       toast.success('Item added to your cart!');
       setLocalItem(state.cart, state.totalPrice);

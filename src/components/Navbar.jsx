@@ -16,6 +16,8 @@ const Navbar = () => {
   const bg = document.querySelector('#bg');
 
   useEffect(() => {
+    if (isCartHovered) return;
+
     if (isMobileMenuOpen) {
       bg.classList.remove('hidden');
       bg.classList.add('block');
@@ -103,6 +105,7 @@ const Navbar = () => {
           <Cart
             isCartHovered={isCartHovered}
             setIsCartHovered={setIsCartHovered}
+            isMobileMenuOpen={isMobileMenuOpen}
           />
         </div>
       </div>

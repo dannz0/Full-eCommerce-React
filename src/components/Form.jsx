@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FormRow from './FormRow';
+import FormCheckbox from './FormCheckbox';
 
 const Form = () => {
   const [userDetails, setuserDetails] = useState({
@@ -10,14 +11,32 @@ const Form = () => {
     zip: '',
     city: '',
     country: '',
+    eMoney: false,
+    cash: false,
+    eMoneyNumber: '',
+    eMoneyPin: '',
   });
 
   const handleChange = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.name);
-    console.log(e.target.checked);
+    if (e.target.name !== 'radio-btn') {
+      setuserDetails({ ...userDetails, [e.target.id]: e.target.value });
+    }
 
-    setuserDetails({ ...userDetails, [e.target.name]: e.target.value });
+    if (e.target.id === 'eMoney') {
+      setuserDetails({
+        ...userDetails,
+        [e.target.id]: e.target.checked,
+        cash: false,
+      });
+    }
+
+    if (e.target.id === 'cash') {
+      setuserDetails({
+        ...userDetails,
+        [e.target.id]: e.target.checked,
+        eMoney: false,
+      });
+    }
   };
 
   return (
@@ -40,6 +59,7 @@ const Form = () => {
               placeholder='Alexei Ward'
               value={userDetails?.name}
               handleChange={handleChange}
+              id='name'
             />
 
             <FormRow
@@ -49,6 +69,7 @@ const Form = () => {
               placeholder='alexei@gmail.com'
               value={userDetails?.email}
               handleChange={handleChange}
+              id='email'
             />
           </div>
 
@@ -60,6 +81,7 @@ const Form = () => {
             value={userDetails?.tel}
             handleChange={handleChange}
             width='true'
+            id='tel'
           />
         </div>
 
@@ -75,6 +97,7 @@ const Form = () => {
             placeholder='1137 Williams Avenue'
             handleChange={handleChange}
             value={userDetails?.address}
+            id='address'
           />
 
           <div className='flex flex-col md:flex-row gap-7'>
@@ -85,6 +108,7 @@ const Form = () => {
               placeholder='10001'
               handleChange={handleChange}
               value={userDetails?.zip}
+              id='zip'
             />
 
             <FormRow
@@ -94,6 +118,7 @@ const Form = () => {
               placeholder='New York'
               handleChange={handleChange}
               value={userDetails?.city}
+              id='city'
             />
           </div>
 
@@ -105,6 +130,7 @@ const Form = () => {
             value={userDetails?.country}
             handleChange={handleChange}
             width='true'
+            id='country'
           />
         </div>
 
@@ -119,45 +145,46 @@ const Form = () => {
             </span>
 
             <div className='flex flex-col gap-7 md:w-1/2'>
-              <div className='flex items-center h-16 px-8 border-2 border-solid rounded-md border-slate-200 hover:border-cusOrangeDark'>
-                <input
-                  onChange={handleChange}
-                  type='radio'
-                  value=''
-                  id='eMoney'
-                  name='radio-btn'
-                  className='bg-white cursor-pointer text-cusOrangeDark border-slate-200 focus:ring-cusOrangeDark'
-                  required
-                />
-
-                <label
-                  htmlFor='eMoney'
-                  className='w-full py-4 ml-5 text-sm font-bold text-black'
-                >
-                  e-Money
-                </label>
-              </div>
-
-              <div className='flex items-center h-16 px-8 border-2 border-solid rounded-md border-slate-200 hover:border-cusOrangeDark'>
-                <input
-                  onChange={handleChange}
-                  type='radio'
-                  value=''
-                  id='cash'
-                  name='radio-btn'
-                  className='bg-white cursor-pointer text-cusOrangeDark border-slate-200 focus:ring-cusOrangeDark'
-                />
-
-                <label
-                  htmlFor='cash'
-                  className='w-full py-4 ml-5 text-sm font-bold text-black'
-                >
-                  Cash on delivery
-                </label>
-              </div>
+              <FormCheckbox
+                handleChange={handleChange}
+                label='eMoney'
+                id='eMoney'
+                value={userDetails?.eMoney}
+              />
+              <FormCheckbox
+                handleChange={handleChange}
+                label='Cash on delivery'
+                id='cash'
+                value={userDetails?.cash}
+              />
             </div>
           </div>
+
+          {userDetails.eMoney && (
+            <div className='flex flex-col md:flex-row gap-7'>
+              <FormRow
+                name='eMoneyNumber'
+                type='number'
+                title='e-Money Number'
+                placeholder='238524993'
+                value={userDetails?.eMoneyNumber}
+                handleChange={handleChange}
+                id='eMoneyNumber'
+              />
+
+              <FormRow
+                name='eMoneyPin'
+                type='number'
+                title='e-Money PIN'
+                placeholder='6891'
+                value={userDetails?.eMoneyPin}
+                handleChange={handleChange}
+                id='eMoneyPin'
+              />
+            </div>
+          )}
         </div>
+        <input type='submit' id='submit-form' className='hidden' />
       </form>
     </div>
   );

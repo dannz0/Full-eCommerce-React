@@ -4,6 +4,7 @@ import { API_ID } from '../assets/data';
 
 const initialState = {
   isLoading: true,
+  bgFilter: false,
   singleProdIsLoading: true,
   singleCategoryIsLoading: true,
   products: [],
@@ -43,6 +44,10 @@ const globalSlice = createSlice({
       if (state.currentProduct) {
         state.singleProdIsLoading = false;
       }
+    },
+
+    toggleBgFilter: (state, { payload }) => {
+      state.bgFilter = payload;
     },
   },
   extraReducers: (builder) => {
