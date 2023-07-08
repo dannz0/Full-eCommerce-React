@@ -70,6 +70,7 @@ const Summary = () => {
         </div>
 
         <label
+          id='submit-btn'
           htmlFor='submit-form'
           className='flex items-center justify-center mt-4 text-white cursor-pointer button bg-cusOrangeDark hover:bg-cusOrangeLight'
         >

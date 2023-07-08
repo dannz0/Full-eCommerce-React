@@ -8,13 +8,20 @@ export const getLocalItem = () => {
   return JSON.parse(storage) || [];
 };
 
-export const getLocalTotalPrice = () => {
-  const price = localStorage.getItem('totalPrice');
+export const getLocalTotalPrice = (statePrice) => {
+  const price = localStorage.getItem(statePrice);
 
   return JSON.parse(price) || 0;
 };
 
-export const setLocalItem = (cartState, totalPriceState) => {
+export const setLocalItem = (
+  cartState,
+  totalPriceState,
+  totalPriceVat,
+  grandTotal
+) => {
   localStorage.setItem('cart', JSON.stringify(cartState));
   localStorage.setItem('totalPrice', JSON.stringify(totalPriceState));
+  localStorage.setItem('totalPriceVat', JSON.stringify(totalPriceVat));
+  localStorage.setItem('grandTotal', JSON.stringify(grandTotal));
 };

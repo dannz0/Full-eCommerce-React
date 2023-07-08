@@ -23,6 +23,8 @@ const Form = () => {
     }
 
     if (e.target.id === 'eMoney') {
+      // RADIO BTNs
+      console.log(e.target.id, e.target.checked);
       setuserDetails({
         ...userDetails,
         [e.target.id]: e.target.checked,
@@ -31,6 +33,7 @@ const Form = () => {
     }
 
     if (e.target.id === 'cash') {
+      console.log(e.target.id, e.target.checked);
       setuserDetails({
         ...userDetails,
         [e.target.id]: e.target.checked,
@@ -39,13 +42,17 @@ const Form = () => {
     }
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className='flex flex-col gap-6 px-8 py-12 mt-4 bg-white rounded-md shadow-xl lg:mt-0 lg:w-2/3 xl:gap-14 lg:gap-10'>
       <span className='mb-8 text-3xl font-bold tracking-wide text-black uppercase lg:text-4xl'>
         checkout
       </span>
 
-      <form className='flex flex-col gap-7'>
+      <form className='flex flex-col gap-7 group' onSubmit={onSubmit}>
         <div className='flex flex-col gap-7'>
           <span className='mb-2 text-sm font-bold tracking-widest uppercase lg:text-md text-cusOrangeDark'>
             billing details
@@ -60,6 +67,7 @@ const Form = () => {
               value={userDetails?.name}
               handleChange={handleChange}
               id='name'
+              pattern='^[a-zA-Z]+$'
             />
 
             <FormRow
@@ -82,6 +90,7 @@ const Form = () => {
             handleChange={handleChange}
             width='true'
             id='tel'
+            pattern='^[0-9\+\-]+$'
           />
         </div>
 
@@ -119,6 +128,7 @@ const Form = () => {
               handleChange={handleChange}
               value={userDetails?.city}
               id='city'
+              pattern='^[a-zA-Z]+$'
             />
           </div>
 
@@ -131,6 +141,7 @@ const Form = () => {
             handleChange={handleChange}
             width='true'
             id='country'
+            pattern='^[a-zA-Z]+$'
           />
         </div>
 
