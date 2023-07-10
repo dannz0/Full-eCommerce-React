@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import FormRow from './FormRow';
 import FormCheckbox from './FormCheckbox';
+import { useDispatch } from 'react-redux';
+import { saveUserData } from '../slices/userSlice';
 
 const Form = () => {
+  const dispatch = useDispatch();
   const [userDetails, setuserDetails] = useState({
     name: '',
     email: '',
@@ -16,6 +19,7 @@ const Form = () => {
     eMoneyNumber: '',
     eMoneyPin: '',
   });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name !== 'radio-btn') {
@@ -44,6 +48,11 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    console.log('submitted');
+    // usually going to back-end etc. etc.
+    dispatch(saveUserData(userDetails));
+    setIsFormSubmitted(true);
   };
 
   return (
