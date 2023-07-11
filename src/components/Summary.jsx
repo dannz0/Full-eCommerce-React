@@ -13,6 +13,7 @@ const Summary = () => {
       </span>
 
       <div className='flex flex-col gap-7'>
+        {/* CART ITEMS */}
         {cart.map((product) => {
           const { image, name, price, productQuantity, slug } = product;
           const { mobile } = image;
@@ -40,6 +41,7 @@ const Summary = () => {
         })}
       </div>
 
+      {/* PRICE NUMBERS */}
       <div className='flex flex-col gap-2'>
         <div className='flex justify-between'>
           <span className='uppercase text-slate-400 text-md'>total</span>

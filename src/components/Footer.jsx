@@ -3,7 +3,6 @@ import { ReactComponent as Facebook } from '../assets/shared/desktop/icon-facebo
 import { ReactComponent as Twitter } from '../assets/shared/desktop/icon-twitter.svg';
 import { ReactComponent as Instagram } from '../assets/shared/desktop/icon-instagram.svg';
 import NavLinks from './NavLinks';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -12,9 +11,18 @@ const Footer = () => {
       {/* ORANGE BORDER */}
       <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-10 py-7 md:px-0 md:items-start'>
         {/* COMPANY LOGO */}
-        <Link to={'/'} className='flex'>
+        <button
+          className='flex'
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            });
+          }}
+        >
           <img src={logo} alt='audiophile logo' />
-        </Link>
+        </button>
         {/* NAVIGATION LINKS */}
         <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-48'>
           <NavLinks />
@@ -30,7 +38,8 @@ const Footer = () => {
         {/* SOCIALS & COPYRIGHT */}
         <div className='flex flex-col w-full gap-6 md:flex-row md:justify-between'>
           <p className='text-sm font-semibold text-center text-cusGrey/50 md:inline-block'>
-            Copyright 2023. All Rights Reserved
+            Copyright 2023. &copy; All Rights Reserved. Made by @dannz0 on
+            GitHub
           </p>
 
           <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-48 lg:top-52 xl:top-48'>

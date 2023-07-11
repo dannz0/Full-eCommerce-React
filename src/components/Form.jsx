@@ -49,7 +49,6 @@ const Form = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log('submitted');
     // usually going to back-end etc. etc.
     dispatch(saveUserData(userDetails));
     setIsFormSubmitted(true);

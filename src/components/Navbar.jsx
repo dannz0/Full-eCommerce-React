@@ -1,7 +1,6 @@
 import logo from '../assets/shared/desktop/logo.svg';
 import mobileMenu from '../assets/shared/tablet/icon-hamburger.svg';
 import { ReactComponent as CartLogo } from '../assets/shared/desktop/icon-cart.svg';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import NavLinks from './NavLinks';
 import Cart from './Cart';
@@ -29,11 +28,11 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className='relative z-20 bg-cusBlack lg:px-40'>
+    <nav className='sticky top-0 z-20 shadow-md bg-cusBlack lg:px-40'>
       <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
-          className='flex flex-col justify-center lg:hidden'
+          className='flex flex-col justify-center cursor-pointer lg:hidden'
           onClick={() => setisMobileMenuOpen(!isMobileMenuOpen)}
         >
           <img src={mobileMenu} />
@@ -52,8 +51,8 @@ const Navbar = () => {
           <div
             className={
               isMobileMenuOpen
-                ? `lg:hidden absolute  w-[calc(100vw-0.5rem)] transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md`
-                : `lg:hidden  w-[calc(100vw-0.5rem)] transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md  `
+                ? `lg:hidden absolute  w-[calc(100vw-0.5rem)] transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md `
+                : `lg:hidden  w-[calc(100vw-0.5rem)] transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md   `
             }
           >
             <div className='flex flex-col items-center justify-center gap-20 px-6 mt-20 md:gap-6 md:flex-row'>
@@ -80,12 +79,18 @@ const Navbar = () => {
         </div>
 
         {/* COMPANY LOGO */}
-        <Link
-          to={'/'}
+        <button
           className='flex align-center md:absolute md:left-20 md:top-6 lg:flex lg:relative lg:top-0 lg:left-0'
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
+          }
         >
           <img src={logo} alt='audiophile logo' />
-        </Link>
+        </button>
 
         {/* NAVIGATION LINKS */}
         <div className='items-center hidden gap-8 text-sm lg:flex lg:mr-16'>
