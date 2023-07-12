@@ -84,14 +84,14 @@ const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
                       <span className='font-bold leading-5 text-black text-md'>
                         {name}
                       </span>
-                      <span className='font-bold text-gray-400'>
+                      <span className='font-bold text-gray-500'>
                         $ {price.toLocaleString(`${navigator.language}`)}
                       </span>
                     </div>
                   </div>
 
                   <div className='flex self-center justify-between px-4 py-2 ml-6 mr-4 bg-gray-100 w-28'>
-                    <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
+                    <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
                       <button
                         onClick={() =>
                           dispatch(handleQuantity({ action: 'dec', slug }))
@@ -103,7 +103,7 @@ const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
                     <div className='flex items-center justify-center w-5 font-bold'>
                       {productQuantity}
                     </div>
-                    <div className='flex items-center justify-center cursor-pointer text-slate-500 hover:text-cusOrangeDark'>
+                    <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
                       <button
                         onClick={() =>
                           dispatch(handleQuantity({ action: 'inc', slug }))

@@ -71,27 +71,53 @@ const cartSlice = createSlice({
         if (product.productQuantity >= 20) return;
 
         product.productQuantity++;
-        state.totalPrice += product.price;
 
-        setLocalItem(state.cart, state.totalPrice);
+        state.totalPrice += product.price;
+        state.totalPriceVat = state.totalPrice * 0.2;
+        state.grandTotal =
+          state.totalPriceVat + state.shipping + state.totalPrice;
+
+        setLocalItem(
+          state.cart,
+          state.totalPrice,
+          state.totalPriceVat,
+          state.grandTotal
+        );
         return;
       }
 
       if (product.productQuantity === 1) {
         state.cart = state.cart.filter((prod) => prod.slug !== product.slug);
         state.totalPrice -= product.price;
+        state.totalPriceVat = state.totalPrice * 0.2;
+        state.grandTotal =
+          state.totalPriceVat + state.shipping + state.totalPrice;
 
         toast.error(`Item removed!`);
 
-        setLocalItem(state.cart, state.totalPrice);
+        setLocalItem(
+          state.cart,
+          state.totalPrice,
+          state.totalPriceVat,
+          state.grandTotal
+        );
         return;
       }
 
       if (payload.action === 'dec') {
         product.productQuantity--;
-        state.totalPrice -= product.price;
 
-        setLocalItem(state.cart, state.totalPrice);
+        state.totalPrice -= product.price;
+        state.totalPriceVat = state.totalPrice * 0.2;
+        state.grandTotal =
+          state.totalPriceVat + state.shipping + state.totalPrice;
+
+        setLocalItem(
+          state.cart,
+          state.totalPrice,
+          state.totalPriceVat,
+          state.grandTotal
+        );
         return;
       }
     },
@@ -101,8 +127,15 @@ const cartSlice = createSlice({
 
       state.cart = [];
       state.totalPrice = 0;
+      state.totalPriceVat = 0;
+      state.grandTotal = 0;
 
-      setLocalItem(state.cart, state.totalPrice);
+      setLocalItem(
+        state.cart,
+        state.totalPrice,
+        state.totalPriceVat,
+        state.grandTotal
+      );
       toast.error(`All items removed!`);
     },
   },

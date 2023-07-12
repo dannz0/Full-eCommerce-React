@@ -10,6 +10,7 @@ const initialState = {
   products: [],
   currentProduct: {},
   filteredProducts: [],
+  isFormSubmitted: false,
 };
 
 const globalSlice = createSlice({
@@ -49,6 +50,9 @@ const globalSlice = createSlice({
     toggleBgFilter: (state, { payload }) => {
       state.bgFilter = payload;
     },
+    toggleisFormSubmitted: (state, { payload }) => {
+      state.isFormSubmitted = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -81,6 +85,7 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-export const { getCategory, getSingleProduct } = globalSlice.actions;
+export const { getCategory, getSingleProduct, toggleisFormSubmitted } =
+  globalSlice.actions;
 
 export default globalSlice.reducer;

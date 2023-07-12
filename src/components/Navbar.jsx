@@ -8,6 +8,7 @@ import SingleMenuCategory from './SingleMenuCategory';
 import imgHeadphones from '../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import imgSpeakers from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
 import imgEarphones from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className='sticky top-0 z-20 shadow-md bg-cusBlack lg:px-40'>
+    <nav className='sticky top-0 z-40 shadow-md bg-cusBlack lg:px-40'>
       <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
@@ -79,7 +80,8 @@ const Navbar = () => {
         </div>
 
         {/* COMPANY LOGO */}
-        <button
+        <Link
+          to={'/'}
           className='flex align-center md:absolute md:left-20 md:top-6 lg:flex lg:relative lg:top-0 lg:left-0'
           onClick={() =>
             window.scrollTo({
@@ -90,7 +92,7 @@ const Navbar = () => {
           }
         >
           <img src={logo} alt='audiophile logo' />
-        </button>
+        </Link>
 
         {/* NAVIGATION LINKS */}
         <div className='items-center hidden gap-8 text-sm lg:flex lg:mr-16'>

@@ -5,13 +5,17 @@ export const getImgUrl = (name) => {
 export const getLocalItem = () => {
   const storage = localStorage.getItem('cart');
 
-  return JSON.parse(storage) || [];
+  if (!storage) return [];
+
+  return JSON.parse(storage);
 };
 
 export const getLocalTotalPrice = (statePrice) => {
   const price = localStorage.getItem(statePrice);
 
-  return JSON.parse(price) || 0;
+  if (!price) return 0;
+
+  return JSON.parse(price);
 };
 
 export const setLocalItem = (

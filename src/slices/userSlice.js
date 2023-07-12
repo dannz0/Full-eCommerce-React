@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  // since no back-end and not doing anything with data its empty on load
+};
 
 const userSlice = createSlice({
   name: 'user',

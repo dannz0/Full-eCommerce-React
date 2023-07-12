@@ -31,7 +31,7 @@ const ProductCard = ({
       {/* BACK BTN */}
       <button
         onClick={() => navigate(`/${category}`)}
-        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[9rem] xl:left-[20rem] hover:text-cusOrangeDark'
+        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[6rem] xl:left-[20rem] hover:text-cusOrangeDark'
       >
         Go back
       </button>

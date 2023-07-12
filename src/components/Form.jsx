@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import FormRow from './FormRow';
 import FormCheckbox from './FormCheckbox';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { saveUserData } from '../slices/userSlice';
+import Modal from './Modal';
+import { toggleisFormSubmitted } from '../slices/globalSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -19,7 +21,8 @@ const Form = () => {
     eMoneyNumber: '',
     eMoneyPin: '',
   });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const { isFormSubmitted } = useSelector((state) => state.global);
+  const bg = document.querySelector('#bg');
 
   const handleChange = (e) => {
     if (e.target.name !== 'radio-btn') {
@@ -27,8 +30,6 @@ const Form = () => {
     }
 
     if (e.target.id === 'eMoney') {
-      // RADIO BTNs
-      console.log(e.target.id, e.target.checked);
       setuserDetails({
         ...userDetails,
         [e.target.id]: e.target.checked,
@@ -37,7 +38,6 @@ const Form = () => {
     }
 
     if (e.target.id === 'cash') {
-      console.log(e.target.id, e.target.checked);
       setuserDetails({
         ...userDetails,
         [e.target.id]: e.target.checked,
@@ -46,12 +46,15 @@ const Form = () => {
     }
   };
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // usually going to back-end etc. etc.
     dispatch(saveUserData(userDetails));
-    setIsFormSubmitted(true);
+
+    dispatch(toggleisFormSubmitted(true));
+    bg.classList.remove('hidden');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -60,7 +63,7 @@ const Form = () => {
         checkout
       </span>
 
-      <form className='flex flex-col gap-7 group' onSubmit={onSubmit}>
+      <form className='flex flex-col gap-7 group' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-7'>
           <span className='mb-2 text-sm font-bold tracking-widest uppercase lg:text-md text-cusOrangeDark'>
             billing details
@@ -205,6 +208,8 @@ const Form = () => {
         </div>
         <input type='submit' id='submit-form' className='hidden' />
       </form>
+
+      {isFormSubmitted && <Modal isFormSubmitted={isFormSubmitted} />}
     </div>
   );
 };

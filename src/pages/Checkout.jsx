@@ -14,7 +14,7 @@ const Checkout = () => {
           Go back
         </button>
       </div>
-      <div className='flex flex-col gap-8 lg:mt-2 lg:flex-row'>
+      <div className='relative flex flex-col gap-8 lg:mt-2 lg:flex-row'>
         <Form />
         <Summary />
       </div>

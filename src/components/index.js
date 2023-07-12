@@ -14,8 +14,10 @@ import SingleMenuCategory from './SingleMenuCategory';
 import YouMayAlsoLike from './YouMayAlsoLike';
 import Form from './Form';
 import Summary from './Summary';
+import Modal from './Modal';
 
 export {
+  Modal,
   Summary,
   Form,
   Loading,

@@ -28,12 +28,12 @@ const Summary = () => {
                   <span className='font-bold leading-5 text-black text-md'>
                     {name}
                   </span>
-                  <span className='font-bold text-gray-400'>
+                  <span className='font-bold text-gray-500'>
                     $ {price.toLocaleString(`${navigator.language}`)}
                   </span>
                 </div>
               </div>
-              <span className='flex items-center justify-center ml-4 font-bold lg:text-lg text-slate-400'>
+              <span className='flex items-center justify-center ml-4 font-bold text-gray-500 lg:text-lg'>
                 {productQuantity}x
               </span>
             </div>
@@ -44,19 +44,19 @@ const Summary = () => {
       {/* PRICE NUMBERS */}
       <div className='flex flex-col gap-2'>
         <div className='flex justify-between'>
-          <span className='uppercase text-slate-400 text-md'>total</span>
+          <span className='text-gray-500 uppercase text-md'>total</span>
           <span className='text-lg font-bold text-black'>
             $ {totalPrice.toLocaleString(`${navigator.language}`)}
           </span>
         </div>
         <div className='flex justify-between'>
-          <span className='uppercase text-slate-400 text-md'>shipping</span>
+          <span className='text-gray-500 uppercase text-md'>shipping</span>
           <span className='text-lg font-bold text-black'>
             $ {shipping.toLocaleString(`${navigator.language}`)}
           </span>
         </div>
         <div className='flex justify-between'>
-          <span className='uppercase text-slate-400 text-md'>
+          <span className='text-gray-500 uppercase text-md'>
             vat (included)
           </span>
           <span className='text-lg font-bold text-black'>
