@@ -60,4 +60,4 @@ Users should be able to:
 - Website - [dannz portfolio incoming](#)
 - Frontend Mentor - [@dannz0](https://www.frontendmentor.io/profile/dannz0)
 - Twitter - [@yourusername](https://www.twitter.com/dannzeloper)
-- Email - [dannzgiang@gmail.com]
+- Email - dannzgiang@gmail.com
