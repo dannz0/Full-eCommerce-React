@@ -22,10 +22,12 @@ const Modal = () => {
   return (
     <div className='absolute left-0 z-20 flex items-center justify-center w-full -top-5'>
       <div className='flex flex-col gap-6 px-6 lg:gap-12 py-6 bg-white rounded-md w-full max-w-[50rem]'>
+        {/* IMG */}
         <div>
           <img src={checkImg} alt='checkmark' />
         </div>
 
+        {/* TEXT BOX */}
         <div className='flex flex-col'>
           <span className='text-2xl font-bold tracking-wide text-black uppercase md:text-4xl'>
             thank you
@@ -38,6 +40,7 @@ const Modal = () => {
           </p>
         </div>
 
+        {/* PRODUCT BOX */}
         <div className='flex flex-col md:flex-row'>
           <div className='flex flex-col gap-3 pr-4 sm:px-6 rounded-t-md md:rounded-tr-none md:rounded-l-md bg-cusGrey md:w-1/2'>
             <div className='content-between gap-4 py-4 flex-flex-col'>
@@ -88,6 +91,8 @@ const Modal = () => {
             </span>
           </div>
         </div>
+
+        {/* BTN */}
         <Link
           to={'/'}
           className='text-center text-white button bg-cusOrangeDark hover:bg-cusOrangeLight'

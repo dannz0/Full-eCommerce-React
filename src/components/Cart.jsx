@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
   const { cart, totalPrice } = useSelector((state) => state.cart);
-  const { bgFilter } = useSelector((state) => state.global);
+  const { isFormSubmitted } = useSelector((state) => state.global);
   const dispatch = useDispatch();
   const bg = document.querySelector('#bg');
 
@@ -27,7 +27,7 @@ const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
   // }, [isCartHovered]);
 
   useEffect(() => {
-    if (isMobileMenuOpen) return;
+    if (isMobileMenuOpen || isFormSubmitted) return;
 
     if (isCartHovered) {
       bg.classList.remove('hidden');

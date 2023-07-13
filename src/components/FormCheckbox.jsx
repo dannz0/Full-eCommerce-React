@@ -1,6 +1,7 @@
 const FormCheckbox = ({ handleChange, label, id, value }) => {
   return (
-    <div
+    <label
+      htmlFor={id}
       className={
         value
           ? 'input-container flex items-center  border-2 border-solid rounded-md cursor-pointer border-cusOrangeDark hover:border-cusOrangeDark'
@@ -23,7 +24,7 @@ const FormCheckbox = ({ handleChange, label, id, value }) => {
       >
         {label}
       </label>
-    </div>
+    </label>
   );
 };
 export default FormCheckbox;

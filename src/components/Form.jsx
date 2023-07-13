@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveUserData } from '../slices/userSlice';
 import Modal from './Modal';
 import { toggleisFormSubmitted } from '../slices/globalSlice';
+import cashLogo from '../assets/checkout/icon-cash-on-delivery.svg';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -59,9 +60,9 @@ const Form = () => {
 
   return (
     <div className='flex flex-col gap-6 px-8 py-12 mt-4 bg-white rounded-md shadow-xl lg:mt-0 lg:w-2/3 xl:gap-14 lg:gap-10'>
-      <span className='mb-8 text-3xl font-bold tracking-wide text-black uppercase lg:text-4xl'>
+      <h3 className='mb-8 text-3xl font-bold tracking-wide text-black uppercase lg:text-4xl'>
         checkout
-      </span>
+      </h3>
 
       <form className='flex flex-col gap-7 group' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-7'>
@@ -156,6 +157,7 @@ const Form = () => {
           />
         </div>
 
+        {/* RADIO BTNS */}
         <div className='flex flex-col gap-7'>
           <span className='mt-5 mb-2 text-sm font-bold tracking-widest uppercase lg:text-md text-cusOrangeDark'>
             payment details
@@ -203,6 +205,20 @@ const Form = () => {
                 handleChange={handleChange}
                 id='eMoneyPin'
               />
+            </div>
+          )}
+
+          {userDetails?.cash && (
+            <div className='flex items-center justify-center gap-6'>
+              <div className='w-24'>
+                <img src={cashLogo} alt='paying with cash' />
+              </div>
+              <p className='text-sm leading-6 text-gray-500'>
+                The 'Cash on Delivery' option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
             </div>
           )}
         </div>

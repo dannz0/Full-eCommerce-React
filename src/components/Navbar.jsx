@@ -9,14 +9,16 @@ import imgHeadphones from '../assets/shared/desktop/image-category-thumbnail-hea
 import imgSpeakers from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
 import imgEarphones from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
   const bg = document.querySelector('#bg');
+  const { isFormSubmitted } = useSelector((state) => state.global);
 
   useEffect(() => {
-    if (isCartHovered) return;
+    if (isCartHovered || isFormSubmitted) return;
 
     if (isMobileMenuOpen) {
       bg.classList.remove('hidden');

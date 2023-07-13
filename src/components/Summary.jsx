@@ -8,9 +8,9 @@ const Summary = () => {
 
   return (
     <div className='flex flex-col px-8 py-12 mt-4 bg-white rounded-md shadow-xl gap-7 lg:w-1/3 lg:mt-0 md:h-min'>
-      <span className='text-xl font-bold tracking-wide text-black uppercase md:text-2xl'>
+      <h4 className='text-xl font-bold tracking-wide text-black uppercase md:text-2xl'>
         summary
-      </span>
+      </h4>
 
       <div className='flex flex-col gap-7'>
         {/* CART ITEMS */}

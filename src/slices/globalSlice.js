@@ -4,7 +4,6 @@ import { API_ID } from '../assets/data';
 
 const initialState = {
   isLoading: true,
-  bgFilter: false,
   singleProdIsLoading: true,
   singleCategoryIsLoading: true,
   products: [],

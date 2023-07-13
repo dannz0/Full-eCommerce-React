@@ -15,9 +15,9 @@ const YouMayAlsoLike = ({ id }) => {
   return (
     <section className='mb-44 section-padding xl:mb-52'>
       <div className='flex items-center justify-center mb-6 sm:mb-10 lg:mb-14'>
-        <span className='text-lg font-bold tracking-wide text-center text-black uppercase sm:text-xl xl:text-3xl'>
+        <h4 className='text-lg font-bold tracking-wide text-center text-black uppercase sm:text-xl xl:text-3xl'>
           you may also like
-        </span>
+        </h4>
       </div>
       <div className='flex flex-col gap-10 md:flex-row md:justify-between sm:gap-16 md:gap-4'>
         {currentProduct.others.map((product) => {
