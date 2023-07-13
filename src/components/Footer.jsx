@@ -1,7 +1,7 @@
-import logo from '../assets/shared/desktop/logo.svg';
-import { ReactComponent as Facebook } from '../assets/shared/desktop/icon-facebook.svg';
-import { ReactComponent as Twitter } from '../assets/shared/desktop/icon-twitter.svg';
-import { ReactComponent as Instagram } from '../assets/shared/desktop/icon-instagram.svg';
+import logo from '../../public/assets/shared/desktop/logo.svg';
+import { ReactComponent as Facebook } from '../../public/assets/shared/desktop/icon-facebook.svg';
+import { ReactComponent as Twitter } from '../../public/assets/shared/desktop/icon-twitter.svg';
+import { ReactComponent as Instagram } from '../../public/assets/shared/desktop/icon-instagram.svg';
 import NavLinks from './NavLinks';
 
 const Footer = () => {

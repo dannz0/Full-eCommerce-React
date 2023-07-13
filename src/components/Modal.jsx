@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import checkImg from '../assets/checkout/icon-order-confirmation.svg';
+import checkImg from '../../public/assets/checkout/icon-order-confirmation.svg';
 import { getImgUrl } from '../util/helpers';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';

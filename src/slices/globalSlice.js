@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { customFetch } from '../util/axios';
-import { API_ID } from '../assets/data';
+import { API_ID } from '../../public/assets/data';
 
 const initialState = {
   isLoading: true,
@@ -76,6 +76,7 @@ export const getProducts = createAsyncThunk(
       const { data } = await customFetch.get(`/${API_ID}`);
 
       const products = data.record;
+      console.log(products);
 
       return products;
     } catch (error) {

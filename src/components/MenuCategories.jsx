@@ -1,6 +1,6 @@
-import imgHeadphones from '../assets/shared/desktop/image-category-thumbnail-headphones.png';
-import imgSpeakers from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import imgEarphones from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import imgHeadphones from '../../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
+import imgSpeakers from '../../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
+import imgEarphones from '../../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 import SingleCategory from './SingleMenuCategory';
 
 const MenuCategories = () => {

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import img from '../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg';
 import { getImgUrl } from '../util/helpers';
 import { useSelector } from 'react-redux';
 import Loading from './Loading';

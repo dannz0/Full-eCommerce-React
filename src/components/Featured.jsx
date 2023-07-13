@@ -1,6 +1,6 @@
-import zx9SpeakerImgMobile from '../assets/home/mobile/image-speaker-zx9.png';
-import zx9SpeakerImgTablet from '../assets/home/tablet/image-speaker-zx9.png';
-import zx9SpeakerImgDesktop from '../assets/home/desktop/image-speaker-zx9.png';
+import zx9SpeakerImgMobile from '../../public/assets/home/mobile/image-speaker-zx9.png';
+import zx9SpeakerImgTablet from '../../public/assets/home/tablet/image-speaker-zx9.png';
+import zx9SpeakerImgDesktop from '../../public/assets/home/desktop/image-speaker-zx9.png';
 import { Link } from 'react-router-dom';
 
 const Featured = () => {

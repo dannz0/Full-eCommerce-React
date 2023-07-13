@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveUserData } from '../slices/userSlice';
 import Modal from './Modal';
 import { toggleisFormSubmitted } from '../slices/globalSlice';
-import cashLogo from '../assets/checkout/icon-cash-on-delivery.svg';
+import cashLogo from '../../public/assets/checkout/icon-cash-on-delivery.svg';
 
 const Form = () => {
   const dispatch = useDispatch();

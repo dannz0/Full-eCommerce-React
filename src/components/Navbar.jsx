@@ -1,13 +1,13 @@
-import logo from '../assets/shared/desktop/logo.svg';
-import mobileMenu from '../assets/shared/tablet/icon-hamburger.svg';
-import { ReactComponent as CartLogo } from '../assets/shared/desktop/icon-cart.svg';
+import logo from '../../public/assets/shared/desktop/logo.svg';
+import mobileMenu from '../../public/assets/shared/tablet/icon-hamburger.svg';
+import { ReactComponent as CartLogo } from '../../public/assets/shared/desktop/icon-cart.svg';
 import { useEffect, useState } from 'react';
 import NavLinks from './NavLinks';
 import Cart from './Cart';
 import SingleMenuCategory from './SingleMenuCategory';
-import imgHeadphones from '../assets/shared/desktop/image-category-thumbnail-headphones.png';
-import imgSpeakers from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import imgEarphones from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import imgHeadphones from '../../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
+import imgSpeakers from '../../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
+import imgEarphones from '../../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
