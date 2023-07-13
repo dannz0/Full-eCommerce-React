@@ -36,6 +36,7 @@ Users should be able to:
 [Category page](./public/assets/screenshots/002.png)
 [Product page](./public/assets/screenshots/003.png)
 [Checkout](./public/assets/screenshots/004.png)
+[Cart](./public/assets/screenshots/005.png)
 
 ### Links
 
