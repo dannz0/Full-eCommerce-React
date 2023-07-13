@@ -21,18 +21,18 @@ const Navbar = () => {
     if (isCartHovered || isFormSubmitted) return;
 
     if (isMobileMenuOpen) {
+      bg.classList.add('lg:hidden');
       bg.classList.remove('hidden');
-      bg.classList.add('block');
     }
     if (!isMobileMenuOpen) {
-      bg.classList.remove('block');
+      bg.classList.add('block');
       bg.classList.add('hidden');
     }
   }, [isMobileMenuOpen]);
 
   return (
     <nav className='sticky top-0 z-40 shadow-md bg-cusBlack lg:px-40'>
-      <div className='flex justify-between px-4 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
+      <div className='flex justify-between px-7 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
           className='flex flex-col justify-center cursor-pointer lg:hidden'
@@ -84,7 +84,7 @@ const Navbar = () => {
         {/* COMPANY LOGO */}
         <Link
           to={'/'}
-          className='flex align-center md:absolute md:left-20 md:top-6 lg:flex lg:relative lg:top-0 lg:left-0'
+          className='flex items-center justify-center md:absolute md:left-20 md:top-7 lg:flex lg:relative lg:top-0 lg:left-0'
           onClick={() =>
             window.scrollTo({
               top: 0,

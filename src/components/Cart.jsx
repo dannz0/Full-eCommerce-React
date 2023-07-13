@@ -30,12 +30,14 @@ const Cart = ({ isCartHovered, setIsCartHovered, isMobileMenuOpen }) => {
     if (isMobileMenuOpen || isFormSubmitted) return;
 
     if (isCartHovered) {
+      bg.classList.remove('lg:hidden');
       bg.classList.remove('hidden');
-      bg.classList.add('block');
+      bg.classList.add('lg:block');
     }
     if (!isCartHovered) {
-      bg.classList.remove('block');
+      bg.classList.remove('lg:block');
       bg.classList.add('hidden');
+      bg.classList.add('lg:hidden');
     }
   }, [isCartHovered]);
 
