@@ -43,7 +43,7 @@ const Modal = () => {
         {/* PRODUCT BOX */}
         <div className='flex flex-col md:flex-row'>
           <div className='flex flex-col gap-3 pr-4 sm:px-6 rounded-t-md md:rounded-tr-none md:rounded-l-md bg-cusGrey md:w-1/2'>
-            <div className='content-between gap-4 py-4 flex-flex-col'>
+            <div className='content-between gap-6 py-4 flex-flex-col'>
               {cart.map((product, i) => {
                 const { image, name, price, productQuantity, slug } = product;
                 const { mobile } = image;

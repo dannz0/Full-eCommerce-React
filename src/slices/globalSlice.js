@@ -76,7 +76,6 @@ export const getProducts = createAsyncThunk(
       const { data } = await customFetch.get(`/${API_ID}`);
 
       const products = data.record;
-      console.log(products);
 
       return products;
     } catch (error) {
