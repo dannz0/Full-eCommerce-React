@@ -32,10 +32,10 @@ Users should be able to:
 
 ### Screenshot
 
-[Home page](./src/assets/screenshots/001.png)
-[Category page](./src/assets/screenshots/002.png)
-[Product page](./src/assets/screenshots/003.png)
-[Checkout](./src/assets/screenshots/004.png)
+[Home page](./public/assets/screenshots/001.png)
+[Category page](./public/assets/screenshots/002.png)
+[Product page](./public/assets/screenshots/003.png)
+[Checkout](./public/assets/screenshots/004.png)
 
 ### Links
 
