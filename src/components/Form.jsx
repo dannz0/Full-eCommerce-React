@@ -55,6 +55,7 @@ const Form = () => {
 
     dispatch(toggleisFormSubmitted(true));
     bg.classList.remove('hidden');
+    bg.classList.remove('lg:hidden');
     window.scrollTo(0, 0);
   };
 

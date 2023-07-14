@@ -17,6 +17,7 @@ const Modal = () => {
     dispatch(toggleisFormSubmitted(false));
     dispatch(removeAllItems());
     bg.classList.add('hidden');
+    bg.classList.add('lg:hidden');
   };
 
   return (
