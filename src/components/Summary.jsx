@@ -1,10 +1,13 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getImgUrl } from '../util/helpers';
+import { HiPlusSmall, HiMinusSmall } from 'react-icons/hi2';
+import { handleQuantity } from '../slices/cartSlice';
 
 const Summary = () => {
   const { cart, totalPrice, totalPriceVat, shipping, grandTotal } = useSelector(
     (state) => state.cart
   );
+  const dispatch = useDispatch();
 
   return (
     <div className='flex flex-col px-8 py-12 mt-4 bg-white rounded-md shadow-xl gap-7 lg:w-1/3 lg:mt-0 md:h-min'>
@@ -33,9 +36,33 @@ const Summary = () => {
                   </span>
                 </div>
               </div>
-              <span className='flex items-center justify-center ml-4 font-bold text-gray-500 lg:text-lg'>
+              {/* <span className='flex items-center justify-center ml-4 font-bold text-gray-500 lg:text-lg'>
                 {productQuantity}x
-              </span>
+              </span> */}
+
+              <div className='flex self-center justify-between px-4 py-2 ml-6 mr-4 bg-gray-100 w-28'>
+                <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
+                  <button
+                    onClick={() =>
+                      dispatch(handleQuantity({ action: 'dec', slug }))
+                    }
+                  >
+                    <HiMinusSmall />
+                  </button>
+                </div>
+                <div className='flex items-center justify-center w-5 font-bold'>
+                  {productQuantity}
+                </div>
+                <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
+                  <button
+                    onClick={() =>
+                      dispatch(handleQuantity({ action: 'inc', slug }))
+                    }
+                  >
+                    <HiPlusSmall />
+                  </button>
+                </div>
+              </div>
             </div>
           );
         })}
