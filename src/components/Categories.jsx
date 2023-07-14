@@ -21,7 +21,7 @@ const Categories = ({ category }) => {
   return (
     <section
       className={
-        filteredProducts[0].category !== 'speakers'
+        filteredProducts[0]?.category !== 'speakers'
           ? 'flex flex-col-reverse items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'
           : 'flex flex-col items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'
       }
