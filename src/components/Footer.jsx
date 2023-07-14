@@ -6,7 +6,7 @@ import NavLinks from './NavLinks';
 
 const Footer = () => {
   return (
-    <footer className='relative flex flex-col items-center bg-cusBlack md:px-10 lg:px-40 '>
+    <footer className='relative flex flex-col items-center bg-cusBlack section-padding '>
       <div className='w-20 h-1 bg-cusOrangeDark md:self-start'></div>
       {/* ORANGE BORDER */}
       <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-10 py-7 md:px-0 md:items-start'>
@@ -24,7 +24,7 @@ const Footer = () => {
           <img src={logo} alt='audiophile logo' loading='lazy' />
         </button>
         {/* NAVIGATION LINKS */}
-        <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-48'>
+        <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-24 xl:right-72'>
           <NavLinks />
         </div>
         {/* COMPANY TEXT */}
@@ -42,7 +42,7 @@ const Footer = () => {
             GitHub
           </p>
 
-          <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-48 lg:top-52 xl:top-48'>
+          <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-24 lg:top-52 xl:top-48 xl:right-72'>
             <a href='#' className='social-links'>
               <Facebook className='hover:fill-cusOrangeDark' />
             </a>
