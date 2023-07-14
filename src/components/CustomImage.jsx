@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
 
 const CustomImage = ({
   preview,
@@ -38,7 +37,7 @@ const CustomImage = ({
     }
 
     fetchImage(image);
-  }, [window.innerWidth, currentImage, location, id]);
+  }, [window.innerWidth, currentImage]);
 
   return (
     <img

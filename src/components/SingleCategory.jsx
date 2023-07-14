@@ -1,11 +1,8 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { getImgUrl } from '../util/helpers';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Loading from './Loading';
 import CustomImage from './CustomImage';
 import preview from '../../public/assets/cart/image-xx99-mark-two-headphones.jpg';
-import { useEffect } from 'react';
-import { setId, setLocation } from '../slices/globalSlice';
 
 const SingleCategory = ({
   slug,
@@ -18,13 +15,6 @@ const SingleCategory = ({
   const { mobile, tablet, desktop } = categoryImage;
 
   const { singleCategoryIsLoading } = useSelector((state) => state.global);
-
-  const location = useLocation();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setLocation(location.pathname));
-  }, [location]);
 
   if (singleCategoryIsLoading) {
     return <Loading />;
@@ -78,9 +68,6 @@ const SingleCategory = ({
 
         <Link
           to={`${slug}`}
-          onClick={() => {
-            dispatch(setId(slug));
-          }}
           className='text-white button bg-cusOrangeDark hover:bg-cusOrangeLight'
         >
           see product

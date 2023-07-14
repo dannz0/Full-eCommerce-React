@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getImgUrl, setLocalItem } from '../util/helpers';
-import Loading from './Loading';
+import { getImgUrl } from '../util/helpers';
 import { Link } from 'react-router-dom';
-import localforage from 'localforage';
-import { setId, setLocation } from '../slices/globalSlice';
 
 const YouMayAlsoLike = ({ id }) => {
   const { currentProduct, singleProdIsLoading } = useSelector(
@@ -48,10 +45,6 @@ const YouMayAlsoLike = ({ id }) => {
 
               <Link
                 to={`/${product.category}/${product.slug}`}
-                onClick={() => {
-                  dispatch(setId(product.slug));
-                  dispatch(setLocation(product.category));
-                }}
                 className='flex justify-center text-white md:w-44 button bg-cusOrangeDark hover:bg-cusOrangeLight xl:w-48 xl:-mt-2'
               >
                 see product
