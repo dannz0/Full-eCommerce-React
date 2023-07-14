@@ -15,6 +15,7 @@ const Featured = () => {
             srcSet={`${zx9SpeakerImgMobile} 768w, ${zx9SpeakerImgTablet} 1020w, ${zx9SpeakerImgDesktop} 1440w`}
             // sizes='(max-width: 768px) 768px, (max-width: 1020px) 1020px, (max-width:1440px) 1440px'
             className='w-full h-full'
+            loading='lazy'
           />
         </div>
 

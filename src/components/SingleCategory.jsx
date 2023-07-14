@@ -37,6 +37,7 @@ const SingleCategory = ({
           )} 1020w, ${getImgUrl(desktop)} 1440w`}
           alt={name}
           className='w-full h-full'
+          loading='lazy'
         />
       </div>
 

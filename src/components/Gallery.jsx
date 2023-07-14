@@ -14,6 +14,7 @@ const Gallery = ({ gallery }) => {
               first.tablet
             )} 1020w, ${getImgUrl(first.desktop)} 1440w`}
             className='hover:scale-105'
+            loading='lazy'
           />
         </div>
         <div className='overflow-hidden rounded-md cursor-pointer'>
@@ -24,6 +25,7 @@ const Gallery = ({ gallery }) => {
               second.tablet
             )} 1020w, ${getImgUrl(second.desktop)} 1440w`}
             className='hover:scale-105'
+            loading='lazy'
           />
         </div>
       </div>
@@ -35,6 +37,7 @@ const Gallery = ({ gallery }) => {
             third.tablet
           )} 1020w, ${getImgUrl(third.desktop)} 1440w`}
           className='hover:scale-105'
+          loading='lazy'
         />
       </div>
     </div>

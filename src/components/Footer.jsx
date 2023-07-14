@@ -21,7 +21,7 @@ const Footer = () => {
             });
           }}
         >
-          <img src={logo} alt='audiophile logo' />
+          <img src={logo} alt='audiophile logo' loading='lazy' />
         </button>
         {/* NAVIGATION LINKS */}
         <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-48'>
