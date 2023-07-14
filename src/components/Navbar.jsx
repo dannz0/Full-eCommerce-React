@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className='sticky top-0 z-40 shadow-md bg-cusBlack lg:px-40'>
+    <nav className='sticky top-0 z-40 shadow-md bg-cusBlack lg:px-24 xl:px-72'>
       <div className='flex justify-between px-7 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div

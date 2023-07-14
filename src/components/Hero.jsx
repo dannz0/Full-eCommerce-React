@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section className='h-screen section-margin md:mb-40 lg:mb-48 lg:h-150'>
-      <figure className='flex flex-col items-center justify-center h-full gap-3 bg-center bg-no-repeat bg-cover lg:items-start lg:px-40 sm:gap-6 hero-image'>
+      <figure className='flex flex-col items-center justify-center h-full gap-3 bg-center bg-no-repeat bg-cover lg:items-start lg:px-24 xl:px-72 sm:gap-6 hero-image'>
         <p className='mt-10 sm:mt-0 text-xs tracking-[0.7rem] uppercase text-cusGrey/40'>
           new product
         </p>
