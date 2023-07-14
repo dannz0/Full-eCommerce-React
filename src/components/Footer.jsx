@@ -6,10 +6,10 @@ import NavLinks from './NavLinks';
 
 const Footer = () => {
   return (
-    <footer className='relative flex flex-col items-center bg-cusBlack section-padding '>
+    <footer className='relative flex flex-col items-center h-96 bg-cusBlack section-padding '>
       <div className='w-20 h-1 bg-cusOrangeDark md:self-start'></div>
       {/* ORANGE BORDER */}
-      <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-10 py-7 md:px-0 md:items-start'>
+      <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-16 py-7 md:px-0 md:items-start'>
         {/* COMPANY LOGO */}
         <button
           className='flex'
@@ -28,7 +28,7 @@ const Footer = () => {
           <NavLinks />
         </div>
         {/* COMPANY TEXT */}
-        <p className='text-sm text-center text-cusGrey/50 md:text-left'>
+        <p className='text-sm text-center text-cusGrey/50 md:text-left lg:w-1/2'>
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
@@ -37,12 +37,12 @@ const Footer = () => {
 
         {/* SOCIALS & COPYRIGHT */}
         <div className='flex flex-col w-full gap-6 md:flex-row md:justify-between'>
-          <p className='text-sm font-semibold text-center text-cusGrey/50 md:inline-block'>
+          <p className='text-sm font-semibold text-center lg:mt-6 text-cusGrey/50 md:inline-block'>
             Copyright 2023. &copy; All Rights Reserved. Made by @dannz0 on
             GitHub
           </p>
 
-          <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-24 lg:top-52 xl:top-48 xl:right-72'>
+          <div className='flex justify-center gap-6 md:justify-between lg:absolute lg:right-24 lg:top-56 xl:top-56 xl:right-72'>
             <a href='#' className='social-links'>
               <Facebook className='hover:fill-cusOrangeDark' />
             </a>
