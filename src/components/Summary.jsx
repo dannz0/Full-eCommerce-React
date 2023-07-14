@@ -44,7 +44,7 @@ const Summary = () => {
                 {productQuantity}x
               </span> */}
 
-              <div className='flex self-center justify-between px-4 py-2 bg-transparent max-w-[7rem]'>
+              <div className='flex self-center justify-between ml-4 bg-transparent max-w-[7rem]'>
                 <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
                   <button
                     onClick={() =>
