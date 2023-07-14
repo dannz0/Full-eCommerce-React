@@ -4,7 +4,7 @@ const Gallery = ({ gallery }) => {
   const { first, second, third } = gallery;
 
   return (
-    <div className='flex flex-col gap-6 md:flex-row section-margin section-padding md:max-h-128'>
+    <div className='flex flex-col gap-6 md:flex-row lg:justify-center section-margin section-padding md:max-h-128'>
       <div className='flex flex-col gap-6 max-w-1/2 xl:max-w-40'>
         <div className='overflow-hidden rounded-md cursor-pointer'>
           <img
