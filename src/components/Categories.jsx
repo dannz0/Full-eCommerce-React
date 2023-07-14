@@ -19,9 +19,14 @@ const Categories = ({ category }) => {
   }
 
   return (
-    <section className='flex flex-col-reverse items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'>
+    <section
+      className={
+        filteredProducts[0].category !== 'speakers'
+          ? 'flex flex-col-reverse items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'
+          : 'flex flex-col items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'
+      }
+    >
       {filteredProducts.map((product, i) => {
-        // console.log(product);
         return <SingleCategory key={product.id} {...product} index={i + 1} />;
       })}
     </section>
