@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isCartHovered, setIsCartHovered] = useState(false);
   const bg = document.querySelector('#bg');
   const { isFormSubmitted } = useSelector((state) => state.global);
+  const { cart } = useSelector((state) => state.cart);
 
   useEffect(() => {
     if (isCartHovered || isFormSubmitted) return;
@@ -104,9 +105,14 @@ const Navbar = () => {
         {/* CART LOGO */}
 
         <div
-          className='flex items-center justify-center cursor-pointer'
+          className='flex items-center justify-center cursor-pointer '
           onMouseEnter={() => setIsCartHovered(true)}
         >
+          {cart.length > 0 && (
+            <div className='flex justify-center items-center text-white text-xs absolute w-5 h-5 rounded-full right-[17.5rem] top-5 bg-cusOrangeDark'>
+              {cart.length}
+            </div>
+          )}
           <CartLogo
             className='self-center w-6 h-6 fill-white hover:fill-cusOrangeDark justify-self-center'
             onClick={() => setIsCartHovered(!isCartHovered)}
