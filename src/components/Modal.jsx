@@ -22,7 +22,7 @@ const Modal = () => {
 
   return (
     <div className='absolute left-0 z-20 flex items-center justify-center w-full -top-5'>
-      <div className='flex flex-col gap-6 px-6 lg:gap-12 py-6 bg-white rounded-md w-full max-w-[50rem]'>
+      <div className='flex flex-col gap-6 p-6 lg:gap-12 md:p-10 bg-white rounded-md w-full max-w-[50rem]'>
         {/* IMG */}
         <div>
           <img src={checkImg} alt='checkmark' />
