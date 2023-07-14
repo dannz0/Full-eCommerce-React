@@ -23,12 +23,16 @@ const Summary = () => {
 
           return (
             <div key={slug} className='flex justify-between w-full'>
-              <div className='flex justify-between gap-4 sm:gap-10 lg:gap-4'>
-                <div className='flex items-center justify-center w-20 h-20 overflow-hidden rounded-md'>
-                  <img src={getImgUrl(mobile)} alt={name} />
+              <div className='flex gap-2 sm:gap-4 lg:gap-4'>
+                <div className='flex items-center justify-center overflow-hidden rounded-md min-w-[4rem] max-w-[5rem]'>
+                  <img
+                    src={getImgUrl(mobile)}
+                    alt={name}
+                    className='rounded-md '
+                  />
                 </div>
-                <div className='flex flex-col items-start justify-center w-24 gap-1'>
-                  <span className='font-bold leading-5 text-black text-md'>
+                <div className='flex flex-col items-start justify-center max-w-[6rem] gap-1'>
+                  <span className='font-bold z-10 leading-5 w-auto text-black text-md max-w-[8rem]'>
                     {name}
                   </span>
                   <span className='font-bold text-gray-500'>
@@ -40,7 +44,7 @@ const Summary = () => {
                 {productQuantity}x
               </span> */}
 
-              <div className='flex self-center justify-between px-4 py-2 ml-6 mr-4 bg-gray-100 w-28'>
+              <div className='flex self-center justify-between px-4 py-2 bg-transparent max-w-[7rem]'>
                 <div className='flex items-center justify-center text-gray-500 cursor-pointer hover:text-cusOrangeDark'>
                   <button
                     onClick={() =>
