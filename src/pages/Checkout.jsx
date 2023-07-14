@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Form, Summary } from '../components';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -9,9 +10,9 @@ const Checkout = () => {
       <div className='relative mt-4 md:my-8 lg:my-14 xl:mt-20 lg:mb-10'>
         <button
           onClick={() => navigate(`/`)}
-          className='text-sm font-semibold text-slate-400 md:absolute hover:text-cusOrangeDark'
+          className='flex items-center text-sm font-semibold text-gray-500 md:absolute hover:text-cusOrangeDark'
         >
-          Go back
+          <AiOutlineLeft className='h-3 mr-1' /> Go back
         </button>
       </div>
       <div className='relative flex flex-col gap-8 lg:mt-2 lg:flex-row'>

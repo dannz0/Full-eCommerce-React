@@ -3,6 +3,7 @@ import { getImgUrl } from '../util/helpers';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
 import QuantityBtn from './QuantityBtn';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 const ProductCard = ({
   category,
@@ -31,9 +32,9 @@ const ProductCard = ({
       {/* BACK BTN */}
       <button
         onClick={() => navigate(`/${category}`)}
-        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[6rem] xl:left-[18rem] hover:text-cusOrangeDark'
+        className='flex items-center justify-center self-start text-sm font-semibold text-gray-500 md:absolute md:-top-10 md:left-14 lg:left-[6rem] xl:left-[18rem] hover:text-cusOrangeDark'
       >
-        Go back
+        <AiOutlineLeft className='h-3 mr-1' /> Go back
       </button>
 
       {/* IMG CONTAINER */}
