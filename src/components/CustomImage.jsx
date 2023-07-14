@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation, useParams } from 'react-router-dom';
 
 const CustomImage = ({
   preview,
@@ -11,6 +13,7 @@ const CustomImage = ({
 }) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
+  const { id, location } = useSelector((state) => state.global);
 
   const fetchImage = (src) => {
     const loadingImage = new Image();
@@ -35,7 +38,7 @@ const CustomImage = ({
     }
 
     fetchImage(image);
-  }, [window.innerWidth, currentImage]);
+  }, [window.innerWidth, currentImage, location, id]);
 
   return (
     <img

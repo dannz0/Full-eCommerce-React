@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { getImgUrl } from '../util/helpers';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
@@ -33,30 +33,22 @@ const ProductCard = ({
       {/* BACK BTN */}
       <button
         onClick={() => navigate(`/${category}`)}
-        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[6rem] xl:left-[20rem] hover:text-cusOrangeDark'
+        className='self-start text-sm font-semibold text-slate-400 md:absolute md:-top-10 md:left-14 lg:left-[6rem] xl:left-[18rem] hover:text-cusOrangeDark'
       >
         Go back
       </button>
 
       {/* IMG CONTAINER */}
       <div className='flex items-center justify-center w-full overflow-hidden rounded-md sm:mb-8 md:mb-0 max-h-80 md:max-h-full md:w-96 lg:h-full lg:w-full lg:max-h-fit'>
-        {/* <img
+        <img
           src={getImgUrl(mobile)}
           srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(
             tablet
           )} 1020w, ${getImgUrl(desktop)} 1440w`}
           alt={name}
-          className='w-full h-full'
+          className='w-full h-full transition-all delay-75 blur-2xl'
           loading='lazy'
-        /> */}
-
-        <CustomImage
-          preview={preview}
-          mobile={mobile}
-          tablet={tablet}
-          desktop={desktop}
-          alt={name}
-          imageStyleClass={'w-full h-full'}
+          onLoad={(e) => e.target.classList.remove('blur-2xl')}
         />
       </div>
 

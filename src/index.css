@@ -59,7 +59,7 @@ input[type='number'] {
   }
 
   .section-padding {
-    @apply px-9 sm:px-24 md:px-12 lg:px-24 xl:px-80;
+    @apply px-9 sm:px-24 md:px-12 lg:px-24 xl:px-72;
   }
 
   .single-category {
