@@ -35,7 +35,7 @@ const CustomImage = ({
     }
 
     fetchImage(image);
-  }, []);
+  }, [window.innerWidth]);
 
   return (
     <img
