@@ -26,7 +26,7 @@ const Categories = ({ category }) => {
           : 'flex flex-col items-center justify-center mb-48 -mt-20 gap-28 lg:gap-36 section-padding section-margin'
       }
     >
-      {filteredProducts.map((product, i) => {
+      {filteredProducts?.map((product, i) => {
         return <SingleCategory key={product.id} {...product} index={i + 1} />;
       })}
     </section>

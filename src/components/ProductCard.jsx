@@ -1,10 +1,8 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getImgUrl } from '../util/helpers';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
 import QuantityBtn from './QuantityBtn';
-import preview from '../../public/assets/cart/image-xx99-mark-two-headphones.jpg';
-import CustomImage from './CustomImage';
 
 const ProductCard = ({
   category,
