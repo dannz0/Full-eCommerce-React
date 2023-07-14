@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { getImgUrl } from '../util/helpers';
 import { useSelector } from 'react-redux';
 import Loading from './Loading';
+import CustomImage from './CustomImage';
+import preview from '../../public/assets/cart/image-xx99-mark-two-headphones.jpg';
 
 const SingleCategory = ({
   slug,
@@ -30,7 +32,7 @@ const SingleCategory = ({
     >
       {/* IMAGE */}
       <div className='flex items-center justify-center w-full overflow-hidden rounded-md max-h-96 lg:h-full lg:w-full md:max-h-72 lg:max-h-fit'>
-        <img
+        {/* <img
           src={getImgUrl(mobile)}
           srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(
             tablet
@@ -38,6 +40,14 @@ const SingleCategory = ({
           alt={name}
           className='w-full h-full'
           loading='lazy'
+        /> */}
+        <CustomImage
+          preview={preview}
+          mobile={mobile}
+          tablet={tablet}
+          desktop={desktop}
+          alt={name}
+          imageStyleClass={'w-full h-full'}
         />
       </div>
 

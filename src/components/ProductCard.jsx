@@ -3,6 +3,8 @@ import { getImgUrl } from '../util/helpers';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
 import QuantityBtn from './QuantityBtn';
+import preview from '../../public/assets/cart/image-xx99-mark-two-headphones.jpg';
+import CustomImage from './CustomImage';
 
 const ProductCard = ({
   category,
@@ -38,7 +40,7 @@ const ProductCard = ({
 
       {/* IMG CONTAINER */}
       <div className='flex items-center justify-center w-full overflow-hidden rounded-md sm:mb-8 md:mb-0 max-h-80 md:max-h-full md:w-96 lg:h-full lg:w-full lg:max-h-fit'>
-        <img
+        {/* <img
           src={getImgUrl(mobile)}
           srcSet={`${getImgUrl(mobile)} 768w, ${getImgUrl(
             tablet
@@ -46,6 +48,15 @@ const ProductCard = ({
           alt={name}
           className='w-full h-full'
           loading='lazy'
+        /> */}
+
+        <CustomImage
+          preview={preview}
+          mobile={mobile}
+          tablet={tablet}
+          desktop={desktop}
+          alt={name}
+          imageStyleClass={'w-full h-full'}
         />
       </div>
 
