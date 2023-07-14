@@ -6,7 +6,7 @@ import NavLinks from './NavLinks';
 
 const Footer = () => {
   return (
-    <footer className='relative flex flex-col items-center h-96 bg-cusBlack section-padding '>
+    <footer className='relative flex flex-col items-center md:h-96 bg-cusBlack section-padding '>
       <div className='w-20 h-1 bg-cusOrangeDark md:self-start'></div>
       {/* ORANGE BORDER */}
       <div className='flex flex-col items-center w-full gap-10 px-4 pt-10 mt-16 py-7 md:px-0 md:items-start'>
