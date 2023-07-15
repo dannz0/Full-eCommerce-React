@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import checkImg from '../../public/assets/checkout/icon-order-confirmation.svg';
 import { getImgUrl } from '../util/helpers';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { removeAllItems } from '../slices/cartSlice';
 import { toggleisFormSubmitted } from '../slices/globalSlice';
@@ -25,7 +24,10 @@ const Modal = () => {
       <div className='flex flex-col gap-6 p-6 lg:gap-12 md:p-10 bg-white rounded-md w-full max-w-[50rem]'>
         {/* IMG */}
         <div>
-          <img src={checkImg} alt='checkmark' />
+          <img
+            src={'/assets/checkout/icon-order-confirmation.svg'}
+            alt='checkmark'
+          />
         </div>
 
         {/* TEXT BOX */}

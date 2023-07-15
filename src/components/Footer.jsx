@@ -1,7 +1,6 @@
-import logo from '../../public/assets/shared/desktop/logo.svg';
-import { ReactComponent as Facebook } from '../../public/assets/shared/desktop/icon-facebook.svg';
-import { ReactComponent as Twitter } from '../../public/assets/shared/desktop/icon-twitter.svg';
-import { ReactComponent as Instagram } from '../../public/assets/shared/desktop/icon-instagram.svg';
+import { ReactComponent as Facebook } from '../assets/icon-facebook.svg';
+import { ReactComponent as Twitter } from '../assets/icon-twitter.svg';
+import { ReactComponent as Instagram } from '../assets/icon-instagram.svg';
 import NavLinks from './NavLinks';
 
 const Footer = () => {
@@ -21,7 +20,11 @@ const Footer = () => {
             });
           }}
         >
-          <img src={logo} alt='audiophile logo' loading='lazy' />
+          <img
+            src={'/assets/shared/desktop/logo.svg'}
+            alt='audiophile logo'
+            loading='lazy'
+          />
         </button>
         {/* NAVIGATION LINKS */}
         <div className='flex flex-col items-center gap-8 text-sm md:flex-row lg:absolute lg:right-24 xl:right-72'>

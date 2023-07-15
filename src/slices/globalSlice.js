@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { customFetch } from '../util/axios';
-import { API_ID } from '../../public/assets/data';
+import { API_ID } from '../assets/data';
 
 const initialState = {
   isLoading: true,

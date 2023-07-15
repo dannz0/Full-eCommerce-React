@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Loading from './Loading';
 import CustomImage from './CustomImage';
-import preview from '../../public/assets/cart/image-xx99-mark-two-headphones.jpg';
 
 const SingleCategory = ({
   slug,
@@ -41,7 +40,7 @@ const SingleCategory = ({
           loading='lazy'
         /> */}
         <CustomImage
-          preview={preview}
+          preview={'/assets/cart/image-xx99-mark-two-headphones.jpg'}
           mobile={mobile}
           tablet={tablet}
           desktop={desktop}

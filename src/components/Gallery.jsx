@@ -4,8 +4,8 @@ const Gallery = ({ gallery }) => {
   const { first, second, third } = gallery;
 
   return (
-    <div className='flex flex-col gap-6 md:flex-row lg:justify-center section-margin section-padding md:max-h-128'>
-      <div className='flex flex-col gap-6 max-w-1/2 xl:max-w-40'>
+    <div className='flex flex-col gap-6 md:flex-row md:justify-center section-margin section-padding md:max-h-128'>
+      <div className='flex flex-col gap-6 xl:max-w-40'>
         <div className='overflow-hidden rounded-md cursor-pointer'>
           <img
             src={`${getImgUrl(`${getImgUrl(first.mobile)}`)}`}
@@ -13,7 +13,7 @@ const Gallery = ({ gallery }) => {
             srcSet={`${getImgUrl(first.mobile)} 768w, ${getImgUrl(
               first.tablet
             )} 1020w, ${getImgUrl(first.desktop)} 1440w`}
-            className='hover:scale-105'
+            className='w-full hover:scale-105'
             loading='lazy'
           />
         </div>
@@ -24,7 +24,7 @@ const Gallery = ({ gallery }) => {
             srcSet={`${getImgUrl(second.mobile)} 768w, ${getImgUrl(
               second.tablet
             )} 1020w, ${getImgUrl(second.desktop)} 1440w`}
-            className='hover:scale-105'
+            className='w-full hover:scale-105'
             loading='lazy'
           />
         </div>
@@ -36,7 +36,7 @@ const Gallery = ({ gallery }) => {
           srcSet={`${getImgUrl(third.mobile)} 768w, ${getImgUrl(
             third.tablet
           )} 1020w, ${getImgUrl(third.desktop)} 1440w`}
-          className='hover:scale-105'
+          className='w-full h-full xl:h-auto hover:scale-105'
           loading='lazy'
         />
       </div>

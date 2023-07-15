@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveUserData } from '../slices/userSlice';
 import Modal from './Modal';
 import { toggleisFormSubmitted } from '../slices/globalSlice';
-import cashLogo from '../../public/assets/checkout/icon-cash-on-delivery.svg';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -212,7 +211,10 @@ const Form = () => {
           {userDetails?.cash && (
             <div className='flex items-center justify-center gap-6'>
               <div className='w-24'>
-                <img src={cashLogo} alt='paying with cash' />
+                <img
+                  src='/assets/checkout/icon-cash-on-delivery.svg'
+                  alt='paying with cash'
+                />
               </div>
               <p className='text-sm leading-6 text-gray-500'>
                 The 'Cash on Delivery' option enables you to pay in cash when

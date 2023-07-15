@@ -1,13 +1,8 @@
-import logo from '../../public/assets/shared/desktop/logo.svg';
-import mobileMenu from '../../public/assets/shared/tablet/icon-hamburger.svg';
-import { ReactComponent as CartLogo } from '../../public/assets/shared/desktop/icon-cart.svg';
+import { ReactComponent as CartLogo } from '../assets/icon-cart.svg';
 import { useEffect, useState } from 'react';
 import NavLinks from './NavLinks';
 import Cart from './Cart';
 import SingleMenuCategory from './SingleMenuCategory';
-import imgHeadphones from '../../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
-import imgSpeakers from '../../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
-import imgEarphones from '../../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -32,14 +27,14 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className='sticky top-0 z-40 shadow-md bg-cusBlack lg:px-24 xl:px-72'>
+    <nav className='top-0 z-50 shadow-md lg:sticky bg-cusBlack lg:px-24 xl:px-72'>
       <div className='flex justify-between px-7 py-7 lg:px-0 border-white/20 border-b-[1px] lg:border-b-2 align-center'>
         {/* MOBILE MENU LOGO */}
         <div
-          className='flex flex-col justify-center cursor-pointer lg:hidden'
+          className='z-50 flex flex-col justify-center cursor-pointer lg:hidden'
           onClick={() => setisMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <img src={mobileMenu} />
+          <img src={'/assets/shared/tablet/icon-hamburger.svg'} />
         </div>
 
         {/* MOBILE MENU */}
@@ -55,25 +50,31 @@ const Navbar = () => {
           <div
             className={
               isMobileMenuOpen
-                ? `lg:hidden absolute  w-[calc(100vw-0.5rem)] transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md `
-                : `lg:hidden  w-[calc(100vw-0.5rem)] transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md   `
+                ? `lg:hidden absolute  w-[calc(100vw)] transition duration-500 ease-out bg-white -left-999  top-0 translate-x-999  z-10 pb-10 md:pb-20 rounded-b-md `
+                : `lg:hidden  w-[calc(100vw-0.5rem)] transition duration-500 ease-in bg-white -left-999  top-0  absolute z-10 pb-14 md:pb-20 rounded-b-md `
             }
           >
             <div className='flex flex-col items-center justify-center gap-20 px-6 mt-20 md:gap-6 md:flex-row'>
               <SingleMenuCategory
-                img={imgHeadphones}
+                img={
+                  '/assets/shared/desktop/image-category-thumbnail-headphones.png'
+                }
                 productName={'headphones'}
                 url={'headphones'}
                 setisMobileMenuOpen={setisMobileMenuOpen}
               />
               <SingleMenuCategory
-                img={imgSpeakers}
+                img={
+                  '/assets/shared/desktop/image-category-thumbnail-speakers.png'
+                }
                 productName={'speakers'}
                 url={'speakers'}
                 setisMobileMenuOpen={setisMobileMenuOpen}
               />
               <SingleMenuCategory
-                img={imgEarphones}
+                img={
+                  '/assets/shared/desktop/image-category-thumbnail-earphones.png'
+                }
                 productName={'earphones'}
                 url={'earphones'}
                 setisMobileMenuOpen={setisMobileMenuOpen}
@@ -85,7 +86,7 @@ const Navbar = () => {
         {/* COMPANY LOGO */}
         <Link
           to={'/'}
-          className='flex items-center justify-center md:absolute md:left-20 md:top-7 lg:flex lg:relative lg:top-0 lg:left-0'
+          className='z-50 flex items-center justify-center md:absolute md:left-20 md:top-7 lg:flex lg:relative lg:top-0 lg:left-0'
           onClick={() =>
             window.scrollTo({
               top: 0,
@@ -94,7 +95,7 @@ const Navbar = () => {
             })
           }
         >
-          <img src={logo} alt='audiophile logo' />
+          <img src={'/assets/shared/desktop/logo.svg'} alt='audiophile logo' />
         </Link>
 
         {/* NAVIGATION LINKS */}
@@ -103,9 +104,8 @@ const Navbar = () => {
         </div>
 
         {/* CART LOGO */}
-
         <div
-          className='flex items-center justify-center cursor-pointer '
+          className='z-50 flex items-center justify-center cursor-pointer'
           onMouseEnter={() => setIsCartHovered(true)}
         >
           {cart.length > 0 && (

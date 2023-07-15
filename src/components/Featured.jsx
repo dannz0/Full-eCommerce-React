@@ -1,6 +1,3 @@
-import zx9SpeakerImgMobile from '../../public/assets/home/mobile/image-speaker-zx9.png';
-import zx9SpeakerImgTablet from '../../public/assets/home/tablet/image-speaker-zx9.png';
-import zx9SpeakerImgDesktop from '../../public/assets/home/desktop/image-speaker-zx9.png';
 import { Link } from 'react-router-dom';
 
 const Featured = () => {
@@ -10,9 +7,9 @@ const Featured = () => {
       <div className='relative flex flex-col items-center justify-center px-6 overflow-hidden rounded-md lg:flex-row gap-14 py-14 md:py-24 lg:pt-72 lg:pb-44 lg:justify-evenly lg:h-80 bg-cusOrangeDark featured-bg-image'>
         <div className='h-52 lg:h-96'>
           <img
-            src={zx9SpeakerImgMobile}
+            src={'/assets/home/mobile/image-speaker-zx9.png'}
             alt='speaker'
-            srcSet={`${zx9SpeakerImgMobile} 768w, ${zx9SpeakerImgTablet} 1020w, ${zx9SpeakerImgDesktop} 1440w`}
+            srcSet={`${'/assets/home/mobile/image-speaker-zx9.png'} 768w, ${'/assets/home/tablet/image-speaker-zx9.png'} 1020w, ${'/assets/home/desktop/image-speaker-zx9.png'} 1440w`}
             // sizes='(max-width: 768px) 768px, (max-width: 1020px) 1020px, (max-width:1440px) 1440px'
             className='w-full h-full'
             loading='lazy'
