@@ -32,7 +32,7 @@ const Summary = () => {
                   />
                 </div>
                 <div className='flex flex-col items-start justify-center max-w-[6rem] gap-1'>
-                  <span className='font-bold z-10 leading-5 w-auto text-black text-md max-w-[8rem]'>
+                  <span className='z-10 w-[85px] font-bold leading-5 text-black text-md'>
                     {name}
                   </span>
                   <span className='font-bold text-gray-500'>
